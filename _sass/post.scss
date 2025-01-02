@@ -621,7 +621,7 @@ main {
 @include mq(desktop){
 
 #post {
-  margin:1.25rem 0;
+  margin:5rem 0;
   margin-left:#{$sidebarwd};
   width:var(--pagewidth-desktop);
   display:inline-block;
