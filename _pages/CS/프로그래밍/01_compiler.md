@@ -14,7 +14,18 @@ thumbnail: "/assets/img/thumbnail/book.jpg"
 **컴파일러(Compiler)**란 코드 전체를 한번에 번연해 기계어 파일(실행 파일)을 생성하는 프로그램을 의미하고, **인터프리터(Interpreter)**란 소스 코드를 한 줄씩 읽고 실행하는 프로그램을 의미한다.
 
 
-**This is an example post '<'.** Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+## 동작방식
+**컴파일러의 실행과정** 
+코드작성: 개발자가 소스 코드를 작성하는 단계로, 고급 프로그래밍 언어를 사용하여 프로그램의 동작을 정의한다. 코드작성의 결과로 `소스코드 파일`이 생성된다.
+컴파일: 컴파일러가 소스코드를 기계어로 번역하는 단계로 고급언어로 작성된 코드를 CPU가 이해할 수 있는 기계어 형태(목적파일)로 변환한다. 이 과정에서 구문 오류(syntax error)가 탐지된다. 컴파일 결과 `목적파일(object file)`이 생성된다.
+링크
+로드
+실행
+
+**인터프리터의 동작방식**
+소스코드 작성하기: 고급언어로
+실행: 
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 # Why do we use it?
 ---
