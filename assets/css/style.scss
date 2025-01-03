@@ -46,15 +46,15 @@ mark { background-color:transparent; }
 }
 
 
-
+span.div-bold{
+  font-weight:bold;
+}
 .bg-grey{
   background: #f0f0f0;
   border-radius: 10px;
   padding: 10px;
 }
-.div-bold{
-  font-weight: bold;
-}
+
 svg {
   width:16px;
   aspect-ratio:1.0;

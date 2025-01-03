@@ -200,7 +200,10 @@ main {
 #post .inner-content { box-shadow:none; }
 
 }
-
+span.div-bold{
+  color: #d3d3d3;
+  font-weight: bold;
+}
 .bg-grey{
   background: #292929;
   border-radius: 10px;
@@ -208,8 +211,5 @@ main {
   color: #AAAAAA;
 }
 
-.div-bold{
-  color: lightgrey;
-  font-weight: bold;
-}
+
 }
