@@ -1,11 +1,9 @@
 ---
-title: "[C언어] C언어 기초 - 주석, 문장, 토큰 개념 정리"
+title: "[C언어] 주석, 문장, 토큰 개념 정리"
 tags:
-    - C언어
-    - 프로그래밍 언어
+    - C언어기초
 date: "2023-12-03"
 thumbnail: "/assets/img/thumbnail/book.jpg"
-bookmark: true
 ---
 
 # What is Lorem Ipsum?
