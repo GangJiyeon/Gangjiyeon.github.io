@@ -28,7 +28,7 @@ html, body {
 
 .fonts-loaded {
   span, p { font-family: 'Pretendard-Regular'; }
-  a, h1, h2, h3, mark, #related-box span, p.category, p.date, p.title {font-family: 'Ownglyph_ryuttung-Rg' }
+  a, h1, h2, h3, mark, #related-box span, p.category, p.date, p.title {font-family: 'Ownglyph_ryuttung-Rg' !important}
 }
 
 a { text-decoration:none; }
@@ -47,7 +47,7 @@ mark { background-color:transparent; }
 .tag-box span, span.post-title, span.info-box, #contact span, a.info-box.category-box .category-tree *{
   font-family: 'Ownglyph_ryuttung-Rg' !important;
 }
-p.category, p.date, p.title {font-family: 'Ownglyph_ryuttung-Rg' }
+p.category, p.date, p.title {font-family: 'Ownglyph_ryuttung-Rg' !important}
 
 span.div-bold{
   font-weight:bold;
