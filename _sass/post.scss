@@ -225,13 +225,15 @@ main {
 
   ul, table, div { margin-bottom:3rem; }
   p {margin-bottom: 10px;}
+  
+  /*
   p + div,
   p + pre,
   p + blockquote,
   div + div { 
     margin-top:-2rem; 
   }
-
+  */
   //,div + blockquote
 
   ul { padding-left:2rem; }
