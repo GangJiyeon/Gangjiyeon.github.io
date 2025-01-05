@@ -26,7 +26,6 @@
     text-align:center;
     width:100%;
     margin:auto;
-    border-radius: 10px;
   }
   .img-xs { width:12.5% !important; }
   .img-sm { width:25% !important; }
@@ -389,8 +388,7 @@ main {
 #related-box {
   margin-top:2rem;
 
-  span { font-size:1.25rem; 
-    font-family: 'Ownglyph_ryuttung-Rg' ;}
+  span { font-size:1.25rem; }
 
   svg { 
     width:20px;
@@ -426,6 +424,7 @@ main {
 
       img {
         opacity:.7;
+        border-radius: 10px;
       }
     }
   }
@@ -608,8 +607,7 @@ main {
 #related-box {
   margin-top:4rem;
 
-  span { font-size:1.5rem; 
-    font-family: 'Ownglyph_ryuttung-Rg' ;}
+  span { font-size:1.5rem; }
 
   svg { width:24px; }
 }
