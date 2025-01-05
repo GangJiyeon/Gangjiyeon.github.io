@@ -76,7 +76,7 @@ main {
 
   code,
   .highlighter-rouge .highlight {
-    border:1px solid dimgrey;
+    //border:1px solid dimgrey;
     background-color:#363a41;
     color:goldenrod;
   }
@@ -110,7 +110,7 @@ main {
 .category-tree a { color:rgb(225, 183, 78); }
 
 .category-header {
-  color:cadetblue;
+  color:#ccc;
   text-decoration:underline slategrey;
 }
 
@@ -168,7 +168,7 @@ main {
   &:hover { background:$color-wenge; }
 }
 
-.toc-header { color:rgb(225, 183, 78); }
+.toc-header { color:#ccc; }
 
 @include mq(tablet){
 
