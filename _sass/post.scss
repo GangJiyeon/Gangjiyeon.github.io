@@ -228,10 +228,11 @@ main {
   p + div,
   p + pre,
   p + blockquote,
-  div + div,
-  div + blockquote { 
+  div + div { 
     margin-top:-2rem; 
   }
+
+  //,div + blockquote
 
   ul { padding-left:2rem; }
 
@@ -332,7 +333,7 @@ main {
 
     p {
       margin:0;
-      padding:10px 0;
+      padding:10px 0 !important;
     }
   }
 
