@@ -12,7 +12,7 @@ thumbnail: "/assets/img/thumbnail/pic1.jpg"
 ---
 ## 컴파일러(Compiler)와 인터프리터(Interpreter)란?
 <div class="bg-grey">
-<span class="div-bold">컴파일러(Compiler)</span>란 코드 전체를 한번에 번연해 기계어 파일(실행 파일)을 생성하는 프로그램을 의미하고, <span class="div-bold">인터프리터(Interpreter)</div>란 소스 코드를 한 줄씩 읽고 실행하는 프로그램을 의미한다.
+<span class="div-bold">컴파일러(Compiler)</span>란 코드 전체를 한번에 번연해 기계어 파일(실행 파일)을 생성하는 프로그램을 의미하고, <span class="div-bold">인터프리터(Interpreter)</span></div>란 소스 코드를 한 줄씩 읽고 실행하는 프로그램을 의미한다.
 </div>
 
 ## 동작방식
