@@ -1,8 +1,7 @@
 ---
-title: "블록체인, NFT"
+title: "디지털트윈"
 tags:
-    - 블록체인
-    - NFT
+    - 디지털트윈
 date: "2024-01-02"
 thumbnail: "/assets/img/thumbnail/pic1.jpg"
 ---
