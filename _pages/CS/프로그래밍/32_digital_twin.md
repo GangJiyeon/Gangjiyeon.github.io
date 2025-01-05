@@ -4,7 +4,7 @@ tags:
     - 블록체인
     - NFT
 date: "2024-01-02"
-thumbnail: "/assets/img/thumbnail/pic2.jpg"
+thumbnail: "/assets/img/thumbnail/pic1.jpg"
 ---
 
 이번에는 디지털 트윈에 알아보자

@@ -4,7 +4,7 @@ tags:
     - 블록체인
     - NFT
 date: "2024-01-01"
-thumbnail: "/assets/img/thumbnail/book.jpg"
+thumbnail: "/assets/img/thumbnail/pic1.jpg"
 ---
 
 이번에는 블록체인과 NFT에 대해 알아보자
