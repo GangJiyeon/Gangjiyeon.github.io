@@ -92,7 +92,7 @@
 .nav-lh svg {
   margin-left:-0.25rem;
   position:relative;
-  fill:$color-darkorange;
+  fill:rgb(230, 231, 237);
   transform:translateY(-2px);
 }
 .nav-sh svg { 
@@ -128,7 +128,7 @@
     width:4px;
     background-color:#aaa;
   }
-  &::-webkit-scrollbar-thumb { background-color:#f2747f; }
+  &::-webkit-scrollbar-thumb { background-color:rgb(152, 163, 190); }
 }
 
 .nav-item { border:none; }

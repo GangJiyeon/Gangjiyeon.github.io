@@ -8,17 +8,17 @@ svg { fill:#aaa; }
 
 #stars, #loading { background:#1E1E1F; }
 
-#loading p { color:cadetblue; }
+#loading p { color: rgb(152, 163, 190); }
 
 .sidebar-left { background-color:#313132; }
 
 .nav-item span { color:#ccc; }
 
-.nav-lh svg { fill:rgb(225, 183, 78); }
+.nav-lh svg { fill:rgb(152, 163, 190); }
 
 .nav-list-expander {
   &:hover { 
-    svg { fill:rgb(225, 183, 78); } 
+    svg { fill:rgb(152, 163, 190); } 
   }
 }
 
@@ -39,7 +39,7 @@ svg { fill:#aaa; }
 #contact{
   ul>li>a {
     &:hover{
-      svg { fill:indianred; }
+      svg { fill:rgb(152, 163, 190); }
     }
   }
 
@@ -95,7 +95,7 @@ main {
     color:#aaa;
   }
 
-  hr { background:cadetblue; }
+  hr { background: rgb(152, 163, 190); }
 
   img + em,
   li {
