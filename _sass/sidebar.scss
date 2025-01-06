@@ -9,7 +9,7 @@
 
 .sidebar-left {
   display:flex;
-  background-color:$color-beige;
+  background-color:rgb(230, 231, 237);
 }
 
 .side-banner {
@@ -19,14 +19,14 @@
 
   button {
     position:absolute;
-    background-color:$color-beige;
+    background-color:rgb(230, 231, 237);
     height:100%;
     aspect-ratio:1;
     top:0;
 
     svg { width:20px; }
 
-    &:hover { background-color:rgba(212, 201, 191, 0.7); }
+    &:hover { background-color:rgb(152, 163, 190); }
   }
   #btn-nav { right:0; }
   #btn-search { right:38px; }
@@ -117,7 +117,7 @@
         }
 
         &:hover{
-          svg { fill:orange; }
+          svg { fill:rgb(152, 163, 190); }
 
           transform:scale(1.5) translateY(-12.5%);
         }
@@ -126,7 +126,7 @@
   }
 
   span { font-size:0.875rem; }
-  a { color:$color-darkorange; }
+  a { color:rgb(152, 163, 190); }
 }
 
 .sidebar-right{ display:none; }

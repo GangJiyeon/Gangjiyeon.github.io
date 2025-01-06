@@ -86,8 +86,8 @@
   background:
   linear-gradient(
     to right,
-    rgba(100, 200, 200, 1),
-    rgba(100, 200, 200, 1)
+    rgb(152, 163, 190),
+    rgb(152, 163, 190)
   ),
   linear-gradient(
     to right,
@@ -247,7 +247,7 @@ main {
     background-color:#f4f4f4;
     border-radius:5px;
     font-family:'Courier New', Courier, monospace;
-    color:$color-darkorange;
+    color: rgb(152, 163, 190);
     position:relative;
     top:-1px;
     vertical-align:middle;

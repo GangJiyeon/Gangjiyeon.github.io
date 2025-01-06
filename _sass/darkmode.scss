@@ -33,7 +33,7 @@ svg { fill:#aaa; }
     &:hover { background-color:#1E1E1F; }
   }
 
-  svg { fill:$color-aqua; }
+  svg { fill:rgb(152, 163, 190); }
 }
 
 #contact{
@@ -78,7 +78,7 @@ main {
   .highlighter-rouge .highlight {
     //border:1px solid dimgrey;
     background-color:#363a41;
-    color:goldenrod;
+    color: rgb(152, 163, 190);
   }
 
   blockquote {
