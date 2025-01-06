@@ -223,7 +223,7 @@ main {
     }
   }
 
-  ul, table, div { margin-bottom:3rem; }
+  
   p {margin-bottom: 10px;}
   
   
@@ -354,15 +354,13 @@ main {
     line-height:1.5;
     box-shadow:0 0 40px 0 rgba(0,0,0,.15);
 
-    thead { box-shadow:0 0 40px 0 rgba(0,0,0,.15); }
     th, td {
       border:1px solid lightgrey;
       word-wrap:break-word;
       white-space:initial;
       max-width:16rem;
     }
-    thead tr { height:3.5rem; }
-    tbody tr { height:3rem; }
+    
     tbody td, thead th { padding:8px; }
 
     tr:first-child th { border-top:0; }
@@ -601,7 +599,7 @@ main {
   }
 
   table {
-    tbody td, thead th { padding:1rem; }
+    tbody td, thead th { padding:5px 20px; }
   }
 
   code { font-size:1rem; }
