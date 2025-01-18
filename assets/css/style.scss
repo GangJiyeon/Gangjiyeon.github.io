@@ -27,8 +27,8 @@ html, body {
 }
 
 .fonts-loaded {
-  span, p, h1, h2, h3 { font-family: 'Pretendard-Regular'; }
-  a, h1, h2, h3, mark, #related-box span, p.category, p.date, p.title {font-family: 'Ownglyph_ryuttung-Rg' !important}
+  span, p, h1, h2, h3, p.category, p.date, p.title , #related-box span{ font-family: 'Pretendard-Regular'; }
+  a, mark {font-family: 'Ownglyph_ryuttung-Rg' !important}
 }
 
 a { text-decoration:none; }
