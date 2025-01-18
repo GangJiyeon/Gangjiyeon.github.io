@@ -21,11 +21,11 @@ html, body {
 }
 
 .fonts-loaded {
-  span, p, h1, h2, h3, p.category, p.date, p.title , #related-box span, li, ul{ font-family: 'Pretendard-Regular'; }
+  span, p, h1, h2, h3, p.category, p.date, p.title , #related-box span, li, ul, th, td{ font-family: 'Pretendard-Regular'; }
   a, mark {font-family: 'Ownglyph_ryuttung-Rg'}
 }
 
-a, span, p, p.category, p.date, p.title, span.post-title, h1, h2, h3, mark, .txt_post, li, ul {font-family: 'Pretendard-Regular'}
+a, span, p, p.category, p.date, p.title, span.post-title, h1, h2, h3, mark, a.txt_post, li, ul,th, td {font-family: 'Pretendard-Regular' !important}
 .tag-box span, span.info-box, #contact span, a.info-box.category-box .category-tree *{ font-family: 'Ownglyph_ryuttung-Rg' !important;}
 
 a { text-decoration:none; }
