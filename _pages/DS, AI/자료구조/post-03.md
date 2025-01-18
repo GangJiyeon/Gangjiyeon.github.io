@@ -1,10 +1,10 @@
 ---
 title: "My personal Online Library"
 tags:
-    - book
-    - education
-date: "2023-12-03"
-thumbnail: "/assets/img/thumbnail/book.jpg"
+    - 자료구조
+    - 알고리즘
+    - 추상데이터타입
+date: "2024-01-17"
 ---
 
 # What is Lorem Ipsum?
