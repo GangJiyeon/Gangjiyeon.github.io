@@ -84,7 +84,7 @@
   }
 
   input {
-    font-size:1.25rem;
+    font-size:1rem;
     padding:8px;
     background:none;
     border-radius: 10px;
@@ -186,7 +186,7 @@
 #search {
   ul, input { width:40rem; }
   ul {
-    div { font-size:1.125rem; }
+    div { font-size:1rem; }
     i { margin-right:1rem; }
   }
 }
@@ -217,7 +217,7 @@
   padding:1rem;
 
   table {
-    th { font-size:1.25rem; }
+    th { font-size:1rem; }
     td { font-size:1rem; }
 
     svg { width:16px; }
@@ -225,7 +225,7 @@
     .ico-book, th .ico-folder { width:20px; }
   }
 
-  .title { font-size:1.25rem; }
+  .title { font-size:1rem; }
 }
 
 }

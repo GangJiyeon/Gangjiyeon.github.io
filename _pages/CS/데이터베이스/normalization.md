@@ -12,10 +12,8 @@ thumbnail: "/assets/img/thumbnail/com.gif"
 # 정규화(normalization)란?
 ---
 ##  정규화란?
-<div class="bg-grey">
-💡<span class="div-bold"> 정규화(normalizaion)</span><br>
-<span class="div-bold">정규화는 </span>데이터베이스 설계에서 중복을 최소화 하고, 데이터베이스의 일관성과 무결성을 유지하기 위해 데이터를 구조화 하는 과정이다. 정규화를 통해 데이터베이스의 효율성을 높이고 데이터 이상현상(anomaly)을 방지할 수 있다.
-</div>
+💡 정규화(normalizaion)
+> 정규화는 데이터베이스 설계에서 중복을 최소화 하고, 데이터베이스의 일관성과 무결성을 유지하기 위해 데이터를 구조화 하는 과정이다. 정규화를 통해 데이터베이스의 효율성을 높이고 데이터 이상현상(anomaly)을 방지할 수 있다.
 
 <br>
 

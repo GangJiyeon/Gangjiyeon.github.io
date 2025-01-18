@@ -27,7 +27,7 @@ html, body {
 }
 
 .fonts-loaded {
-  span, p { font-family: 'Pretendard-Regular'; }
+  span, p, h1, h2, h3 { font-family: 'Pretendard-Regular'; }
   a, h1, h2, h3, mark, #related-box span, p.category, p.date, p.title {font-family: 'Ownglyph_ryuttung-Rg' !important}
 }
 
@@ -35,7 +35,11 @@ a { text-decoration:none; }
 a, span, p, h1, h2, h3, i { color:#3A241A; }
 a, span, p {  font-family: 'Pretendard-Regular'; }
 h1, h2, h3, mark {
-  	margin:0;
+  margin:0;
+	 font-family: 'Pretendard-Regular';
+}
+mark{
+  margin:0;
 	font-family: 'Ownglyph_ryuttung-Rg' ;
 }
 #related-box span{
@@ -47,7 +51,7 @@ mark { background-color:transparent; }
 .tag-box span, span.post-title, span.info-box, #contact span, a.info-box.category-box .category-tree *{
   font-family: 'Ownglyph_ryuttung-Rg' !important;
 }
-p.category, p.date, p.title {font-family: 'Ownglyph_ryuttung-Rg' !important}
+p.category, p.date, p.title {font-family: 'Pretendard-Regular' !important}
 
 span.div-bold{
   font-weight:bold;
