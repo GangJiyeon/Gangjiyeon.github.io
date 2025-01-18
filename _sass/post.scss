@@ -245,14 +245,14 @@ main {
 
   code {
     margin:0 2px;
-    padding:2px 5px;
+    padding:2px 5px 0px 5px;
     //border:1px solid #eaeaea;
     background-color:#f4f4f4;
     border-radius:5px;
     font-family:'Courier New', Courier, monospace;
     color: rgb(152, 163, 190);
     position:relative;
-    top:-1px;
+    top:0;
     vertical-align:middle;
   }
 
@@ -564,7 +564,7 @@ main {
 }
 
 .tag-box { 
-  margin:3rem;
+  margin:2.5rem;
   margin-top:1rem;
 }
 
