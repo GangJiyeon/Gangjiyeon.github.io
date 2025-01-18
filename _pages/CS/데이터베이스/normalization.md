@@ -41,7 +41,7 @@ thumbnail: "/assets/img/thumbnail/com.gif"
 # 정규화 단계
 ---
 
-정규화는 **1NF(제1정규형) > 2NF > 3NF > BCNF > 4NF > 5FN**까지 진행되고, 일반적으로는 `3FN`나 `BCNF`까지만 수행된다.
+정규화는 `1NF(제1정규형) > 2NF > 3NF > BCNF > 4NF > 5FN`까지 진행되고, 일반적으로는 `3FN`나 `BCNF`까지만 수행된다.
 
 <br>
 
@@ -51,6 +51,7 @@ thumbnail: "/assets/img/thumbnail/com.gif"
 <br>
 
 **[ 1NF를 위반한 테이블 ]**
+
 |학생ID|이름|과목|
 |:---:|:---:|:---:|
 |1|홍길동|수학, 과학|
@@ -94,7 +95,8 @@ thumbnail: "/assets/img/thumbnail/com.gif"
 
 **[ 2NF를 만족하는 테이블 ]**
 
-고객명, 고객전화번호를 주문ID로만 분리하여 부분적 종속성을 제거하였다.(완전 종속성 만족!)
+- 고객명, 고객전화번호를 주문ID로만 분리하여 부분적 종속성을 제거하였다.(완전 종속성 만족!)
+
 📎 주문테이블
 
 |주문ID|고객명|고객전화번호|
@@ -205,6 +207,7 @@ thumbnail: "/assets/img/thumbnail/com.gif"
 ## 💡 4NF(제4정규화, Fourth Normal Form)
 > 3NF와 BCNF를 만족하면서 다치 종속(Multi-Valued Dependency, MVD)이 존재하지 않아야 한다.
 하나의 키에 대해 여러 독립적인 다치 종속 관계가 존재할 경우 이를 분리한다.
+
 <br>
 
 **[ 3NF와 BCNF를 만족하면서, 4NF를 위반한 테이블 ]**
@@ -227,7 +230,6 @@ thumbnail: "/assets/img/thumbnail/com.gif"
 |1|수학|
 |1|과학|
 
-<br>
 📎 학생-동아리 테이블 
 
 |학생ID|동아리|
