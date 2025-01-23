@@ -5,6 +5,8 @@ tags:
     - 알고리즘
     - 추상데이터타입
 date: "2024-01-17"
+thumbnail: "/assets/img/thumbnail/mun.jpg"
+
 ---
 
 # 추상데이터 타입, 자료구조, 알고리즘의 정의
