@@ -1,11 +1,9 @@
 ---
-
-title:  "[python] 16. 파이썬 패키지"
-date:   2024-10-23
- tags:
+title: "[python] 16. 파이썬 패키지"
+tags:
     - 파이썬기초
+date:  2024-10-23
 thumbnail: "/assets/img/thumbnail/book.jpg"
-
 ---
 이번에는 파이썬의 패키지에 대해 알아보자
 

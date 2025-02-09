@@ -1,5 +1,4 @@
 ---
-
 title:  "[python] 7. 자료형 - 불"
 date:   2024-10-14
  tags:

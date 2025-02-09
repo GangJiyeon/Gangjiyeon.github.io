@@ -1,9 +1,9 @@
 ---
-
 title:  "[python] 1. 자료형 - 숫자형 자료형"
-date:   2024-10-07
- tags:
+tags:
     - 파이썬기초
+date:   2024-10-07
+
 thumbnail: "/assets/img/thumbnail/book.jpg"
 
 ---

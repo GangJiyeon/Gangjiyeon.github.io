@@ -1,5 +1,4 @@
 ---
-
 title:  "[python] 10. 파이썬 제어문(if, while, for)"
 date:   2024-10-17
  tags:

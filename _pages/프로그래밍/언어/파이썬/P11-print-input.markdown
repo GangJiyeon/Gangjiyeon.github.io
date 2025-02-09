@@ -1,5 +1,4 @@
 ---
-
 title:  "[python] 12. 파이썬 입출력"
 date:   2024-10-19
  tags:

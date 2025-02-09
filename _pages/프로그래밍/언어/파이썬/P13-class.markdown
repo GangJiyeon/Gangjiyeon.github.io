@@ -1,5 +1,4 @@
 ---
-
 title:  "[python] 14. 파이썬 클래스"
 date:   2024-10-21
  tags:

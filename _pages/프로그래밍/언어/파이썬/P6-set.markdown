@@ -1,5 +1,4 @@
 ---
-
 title:  "[python] 6. 자료형 - 집합"
 date:   2024-10-13
  tags:

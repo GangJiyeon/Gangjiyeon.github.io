@@ -1,11 +1,9 @@
 ---
-
 title:  "[python] 4. 자료형 - 튜플"
 date:   2024-10-11
  tags:
     - 파이썬기초
 thumbnail: "/assets/img/thumbnail/book.jpg"
-
 ---
 이번에는 파이썬의 튜플 자료형에 대해 알아보자
 

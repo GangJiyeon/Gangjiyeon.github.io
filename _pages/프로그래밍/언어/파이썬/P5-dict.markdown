@@ -1,9 +1,8 @@
 ---
-
 title:  "[python] 5. 자료형 - 딕셔너리"
-date:   2024-10-12
  tags:
     - 파이썬기초
+date:   2024-10-12
 thumbnail: "/assets/img/thumbnail/book.jpg"
 
 ---

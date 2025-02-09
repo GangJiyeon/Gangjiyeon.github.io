@@ -1,9 +1,8 @@
 ---
-
-title:  "[python] 2. 자료형 - 문자열 자료형"
-date:   2024-10-09
- tags:
-    - 파이썬기초
+title: "[python] 2. 자료형 - 문자열 자료형"
+tags:
+  - 파이썬기초
+date:  2024-10-09
 thumbnail: "/assets/img/thumbnail/book.jpg"
 
 ---

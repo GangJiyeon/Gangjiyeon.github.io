@@ -1,5 +1,4 @@
 ---
-
 title:  "[python] 9. 파이썬 변수"
 date:   2024-10-16
  tags:

@@ -1,11 +1,9 @@
 ---
-
-title:  "[python] 3. 자료형 - 리스트 자료형"
-date:   2024-10-10
- tags:
+title: "[python] 3. 자료형 - 리스트 자료형"
+tags:
     - 파이썬기초
+date:   2024-10-10
 thumbnail: "/assets/img/thumbnail/book.jpg"
-
 ---
 이번에는 파이썬의 자료형 중 리스트 자료형에 대해 알아보자
 

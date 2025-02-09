@@ -1,11 +1,9 @@
 ---
-
-title:  "[python] 15. 파이썬 모듈"
-date:   2024-10-22
- tags:
-    - 파이썬기초
+title: "[python] 15. 파이썬 모듈"
+tags:
+   - 파이썬기초
+date:  2024-10-22
 thumbnail: "/assets/img/thumbnail/book.jpg"
-
 ---
 이번에는 파이썬의 모듈에 대해 알아보자
 
