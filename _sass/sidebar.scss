@@ -50,11 +50,10 @@
     width:9rem;
     aspect-ratio:1;
     border-radius:50%;
-    outline-offset:-4.5rem;
     transition:.3s;
 
     &:hover {
-      outline:4px solid orange;
+      outline:4px solid #98a3be;
       outline-offset:8px;
     }
   }
