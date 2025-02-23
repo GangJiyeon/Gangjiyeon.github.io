@@ -15,6 +15,13 @@ $baseurl: "{{ site.baseurl }}";
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'goorm-sans-code';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-code.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body {
   margin:0;
   padding:0;
@@ -23,10 +30,12 @@ html, body {
 .fonts-loaded {
   span, p, h1, h2, h3, p.category, p.date, p.title , #related-box span, li, ul, th, td{ font-family: 'Pretendard-Regular'; }
   a, mark {font-family: 'Ownglyph_ryuttung-Rg'}
+  code {font-family: 'goorm-sans-code';}
 }
 
 a, span, p, p.category, p.date, p.title, span.post-title, h1, h2, h3, a.txt_post, li, ul,th, td {font-family: 'Pretendard-Regular' }
 .tag-box span, span.info-box, #contact span, a.info-box.category-box .category-tree *, mark{ font-family: 'Ownglyph_ryuttung-Rg' !important;}
+code {font-family: 'goorm-sans-code';}
 
 a { text-decoration:none; }
 a, span, p, h1, h2, h3, i { color:#3A241A; }
