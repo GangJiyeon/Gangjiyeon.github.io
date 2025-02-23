@@ -39,8 +39,8 @@ thumbnail: "/assets/img/thumbnail/book.jpg"
 * `short`, `long`: 파생 키워드
 
 > 왜 `short`, `int`, `long` 로 구분하여 사용할까?     
-> * 다양한 범위의 정수를 저장하기 위해
-> * 메모리 낭비를 줄이고, 저장이 되지 않는 것을 방지하기 위해    
+> • 다양한 범위의 정수를 저장하기 위해
+> • 메모리 낭비를 줄이고, 저장이 되지 않는 것을 방지하기 위해    
 > _(일반적으로 자료형의 사이즈가 크면 느려지고, 메모리 낭비가 생길 수 있음)_
 
 <br>
@@ -74,12 +74,12 @@ thumbnail: "/assets/img/thumbnail/book.jpg"
 |unsigned long int|4byt|`%x`|0 ~ 2^32-1|
 
 > 참고
-> * `signed short int` = `short int` = `int`
-> * `signed int` = `int` = `signed`
-> * `signed long int` = `long int` = `int`
-> * `unsigned short int` = `unsigned short`
-> * `unsigned int` = `unsigned`
-> * `unsigned long int` = `unsigned long`
+> • `signed short int` = `short int` = `int`
+> • `signed int` = `int` = `signed`
+> • `signed long int` = `long int` = `int`
+> • `unsigned short int` = `unsigned short`
+> • `unsigned int` = `unsigned`
+> • `unsigned long int` = `unsigned long`
 
 <br>
 <br>
@@ -89,6 +89,7 @@ thumbnail: "/assets/img/thumbnail/book.jpg"
 ## 실수형(부동소수형, floating number data type)
 **1) 실수형이란** 
 > 실수를 표현하는 자료형
+
 • `float` ≤ `double` ≤ `long double`
 • 내부적으로 부동소수점 표현법을 사용 => `부동소수점수 (=부동소수)`
 • 이진수로 인식
