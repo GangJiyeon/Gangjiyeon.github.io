@@ -257,8 +257,7 @@ main {
 
   .highlighter-rouge .highlight {
     background:#f4f4f4;
-    border:1px solid #eaeaea;
-    border-radius:3px;
+    border-radius:5px;
     margin:8px auto;
 
     pre {
@@ -345,7 +344,6 @@ main {
 
   table {
     margin: 0 0 10px 0;
-    display:block;
     width: 100%;
     overflow-x:auto;
     white-space:nowrap;
