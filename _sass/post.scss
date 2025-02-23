@@ -355,6 +355,9 @@ main {
     border-collapse:collapse;
     line-height:1.5;
 
+    thead{
+      width: 100%;
+    }
     th, td {
       border:1px solid lightgrey;
       word-wrap:break-word;
