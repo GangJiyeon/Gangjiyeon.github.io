@@ -114,16 +114,6 @@ v 1.0 2024.04.01 홍길동
 
 <br>
 
-• 자료형    
-
-|자료형 구분|설명 및 종류|
-|:---:|:---|
-|기본자료형<br>(basic data type)|기본이 되는 자료형<br>▫️ 정수형 `short` `int` `long`  <br>▫️ 실수형 `float` `double` `long double`<br>▫️ 문자형 `char`  =>컴퓨터는 문자를 정수로 처리해 정수형 취급하기도 함<br>▫️ 무치형 `void`|
-|유도형<br>(deprived data type)|기본형에서 나온 자료형 <br>`array; 배열` `pointer 포인터` `function 함수`|
-|사용자정의형<br>(user defined data type)|기본형, 유도형을 이용해 사용자가 만드는 자료형<br>`enumiration 열거형` `structure 구조체` `union 공용체`|
-
-
-<br>
 
 **2) 식별자; identifiers**    
 > 프로그래머가 의미를 정한 단어: `변수명칭` `상수명칭` `함수명칭`
