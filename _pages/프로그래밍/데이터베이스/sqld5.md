@@ -52,14 +52,54 @@ INSERT INTO 테이블명
 VALUES (값1, 값2, ...);
 ```
 
+<br>
+
+**[ INSERT Action ]**
+> `Automatic`, `Set Null`, `Set Default`, `Dependent`, `No Action`
+
+• Automatic: Master(참조) 테이블에 PK가 없는 경우 Master PK를 생성한 후 Child 입력
+• Set Null: Master 테이블에 PK가 없는 경우 Child 외부키를 Null 값으로 처리
+• Set Default: Master 테이블에 PK가 없는 경우 Child의 지정된 Default 값으로 입력
+• Dependent: Master 테이블에 PK가 존재할 때만 Child 입력 허용
+• No Action: 참조무결성을 위반하는 입력 액션을 취하지 않음
+
+<br>
+<br>
 
 ## UPDATE
-> 데이터를 수정할 때 사용, 컬럼 단위로 작업 수행
+> 데이터를 수정할 때 사용
 
-② WHERE 절을 생략하면 모든 행 수정
-③ 컬럼 값 수정하기 • 단일컬럼 수정하기 
+<br>
+
+**[ UPDATE 규칙 ]**
+• 컬럼 단위로 작업 수행
+• WHERE 절을 생략하면 모든 행 수정
+
+<br>
+
+**[ 컬럼 값 수정하기 ]**
+• 단일컬럼 수정하기
+
+```sql
+UPDATE 테이블명
+SET 수정할컬럼명 = 값
+WHERE 조건;
+```
+
 • 다중컬럼 수정하기 
 
+```sql
+UPDATE 테이블명
+SET 수정할컬럼명1 = 값1, 수정할컬럼명2 = 값2, ...
+WHERE 조건;
+```
+
+
+```sql
+UPDATE 테이블명
+SET (수정할컬럼명1, 수정할컬럼명2, ...) = (값1, 값2, ...)
+WHERE 조건;
+```
 
 => 수정 값으로는 상수도 사용 가능하고, 서브쿼리를 통해 설정할 수도 있음
 
