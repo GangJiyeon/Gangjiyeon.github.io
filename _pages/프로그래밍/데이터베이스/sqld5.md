@@ -10,7 +10,7 @@ thumbnail: "/assets/img/thumbnail/pic1.jpg"
 
 # DML(Data Manipulation Language) 
 ---
-## **DML**
+## **💡 DML**
 > 데이터 INSERT(삽입), UPDATE(수정), DELETE(삭제), MERGE(병합)을 담당하는 언어
 
 👉 반드시 commit이나 rollback을 통한 트랜젝션 제어가 필요함
@@ -18,7 +18,7 @@ thumbnail: "/assets/img/thumbnail/pic1.jpg"
 <br>
 <br>
 
-## **INSERT**
+## **💡 INSERT**
 > 테이블에 행을 삽입할 때 사용
 
 • ORACLE: 모든 삭제와 삽입의 단위는 행이므로, 한 번에 한 행만 입력가능
@@ -66,7 +66,7 @@ VALUES (값1, 값2, ...);
 <br>
 <br>
 
-## **UPDATE**
+## **💡 UPDATE**
 > 데이터를 수정할 때 사용
 
 <br>
@@ -106,7 +106,7 @@ WHERE 조건;
 <br>
 <br>
 
-## **DELETE**
+## **💡 DELETE**
 > 데이터를 삭제할 때 사용, 행단위 실행
 
 <br>
@@ -121,7 +121,7 @@ DELETE
 
 <br>
 
-**[ DELETE/MODIFY 옵션 ]**
+**[ DELETE / MODIFY 옵션 ]**
 > `Cascade`, `Set Null`, `Set Default`, `Restrict`
 
 • Cascade: Master 삭제 시 Child 같이 삭제
@@ -133,7 +133,7 @@ DELETE
 <br>
 <br>
 
-## **MERGE**
+## **💡 MERGE**
 > 참조 테이블을 기준으로 다른 테이블을 수정하는 것으로 데이터 병합 시 사용
 
 <br>
@@ -165,14 +165,14 @@ WHEN NOT MATCHED THEN
 # TCL(Transaction Control Language) 
 ---
 
-## **트랜잭션**
+## **💡 트랜잭션**
 > 트랜잭션: 데이터베이스의 논리적 연산 단위(하나의 연속적인 업무 단위)
 
 👉 분할 할 수 없음, 모두 COMMIT하거나 ROLLBACK 처리 해야함
 
 <br>
 
-**트랜잭션의 ACID 특징**
+**[ 트랜잭션의 ACID 특징 ]**
 • 원자성(atomicity): 트랜잭션 정의된 연산들 모두 성공적으로 실행되거나 전혀 실행되지 않은 상태로 남아있어야 함
 • 일관성(consistency): 트랜잭션 실행 전 데이터베이스 내용이 잘못되어 있지 않다면 실행 이후에도 잘못이 있으면 안 됨
 • 고립성(isolation): 트랜잭션 실행 중 다른 트랜잭션의 영향을 받아 잘못된 결과를 만들어서는 안 됨
@@ -181,18 +181,18 @@ WHEN NOT MATCHED THEN
 <br>
 <br>
 
-## **TCL(Transation Control Language)**
+## **💡 TCL(Transation Control Language)**
 > 트랜잭션 제어어: DML에 의해 조작된 결과를 작업단위 별로 제어하는 명령어
 
-•  COMMIT과 ROLLBACK 포함
-•  DML 수행 후 트랜잭션을 정상 종료하지 않으면 LOCK 발생
-•  _LOCK(잠금)_: 트랜잭션이 수행하는 통한 특정 데이터에 대해서 다른 트랜잭션이 동시에 접근하지 못하도록 제한
-		 잠금이 걸린 데이터는 잠금을 실행한 트랜잭션만이 접근, 해제 가능(관리자 권한 계정 제외)
+(1) COMMIT과 ROLLBACK 포함
+(2) DML 수행 후 트랜잭션을 정상 종료하지 않으면 LOCK 발생
+• LOCK(잠금): 트랜잭션이 수행하는 통한 특정 데이터에 대해서 다른 트랜잭션이 동시에 접근하지 못하도록 제한
+• 잠금이 걸린 데이터는 잠금을 실행한 트랜잭션만이 접근, 해제 가능(관리자 권한 계정 제외)
 
 <br>
 <br>
 
-## **COMMIT과 ROLLBACK**
+## **💡 COMMIT과 ROLLBACK**
 > COMMIT: 입력, 수정, 삭제한 데이터에 이상이 없을 경우 데이터를 저장하는 명령어
 > ROLEBACK: 테이블 내 입력한 데이터나 수정한 데이터, 삭제한 데이터에 대해 변경을 취소하는 명령어
 
@@ -202,6 +202,8 @@ WHEN NOT MATCHED THEN
 • 한번 COMMIT을 수행하면 COMMIT 이전에 수행된 DML은 되돌릴 수 없음
 • ORACLE: DDL 시 AUTO COMMIT(23c 이전)
 • SQL Server: AUTO COMMIT 비활성화 설정 가능 
+
+<br>
 
 **[ ROLLBACK 규칙 ]**
 • 데이터베이스에 저장되지 않고 최종 COMMIT 지점, 변경 전, SAVEPOINT 지점 중 하나로 원복
@@ -214,19 +216,13 @@ COMMIT 이전을 제외한 사용자가 원하는 위치와 이름으로 설정�
 **[ 사용하기 ]**
 
 ```sql
-
 INSERT INTO 테이블 VALUES(1, 2);
+COMMIT;							-- COMIIT 사용하기
 
--- COMIIT 사용하기
-COMMIT;
-
--- SAVEPOINT 지정하기
-SAVEPOINT TO SAVEPOINT명;
+SAVEPOINT TO SAVEPOINT명;		-- SAVEPOINT 지정하기
 
 INSERT INTO 테이블명 VALUES(3, 4);
-
--- ROLEBACK 사용하기
-ROLLBACK TO SAVEPOINT명;
+ROLLBACK TO SAVEPOINT명;		-- ROLEBACK 사용하기
 ```
 
 
@@ -239,7 +235,7 @@ ROLLBACK TO SAVEPOINT명;
 # DDL(Data Definition Language) 
 ---
 
-## **DDL(Data Definition Language)**
+## **💡 DDL(Data Definition Language)**
 > 데이터 정의어로 객체 생성, 변경, 삭제 등 데이터 구조를 정의하는 언어
 
 • 종류: `CREATE(객체생성)`, `ALTER(객체변경)`, `DROP(객체삭제)`, `TRUNCATE(구조는 유지하고 데이터삭제)`
@@ -249,10 +245,11 @@ ROLLBACK TO SAVEPOINT명;
 <br>
 <br>
 
-## **제약조건**
+## **💡 제약조건**
 
 > 데이터 무결성을 위해 각 컬럼에 생성하는 데이터의 제약 장치
 
+<br>
 
 **[ 제약조건 정의하기 ]**
 
@@ -292,7 +289,7 @@ DROP CONSTRAINT 제약조건명;
 <br>
 <br>
 
-## **제약조건의 종류**
+## **💡 제약조건의 종류**
 **(1) PRIMARY KEY(기본키)**
 • 각 행을 구별할 수 있는 유일한 식별자
 • 중복(UNIQUE), NULL을 허용하지 않음: 컬럼에 PRIMARY KEY를 생성하면 NOT NULL 속성이 자동으로 부여 됨
@@ -327,6 +324,8 @@ CREATE TABLE 테이블명(
 ## **CREATE**
 > 테이블이나 인덱스와 같은 객체를 생성하는 명령어
 
+<br>
+
 **[ 테이블 생성하기 ]**
 (1) 필수 정의: 테이블명, 컬럼명, 컬럼순서, 컬럼크기, 컬럼의 데이터타입
 (2) 생략 가능: 각 컬럼의 제약조건, 기본값, 소유자(생략 시 명령어 수행 계정이 소유자가 됨), 숫자컬럼의 사이즈
@@ -340,6 +339,8 @@ CREATE TABLE [소유자.]테이블명
 	...
 );
 ```
+
+<br>
 
 **[ 테이블 복제 ]**
 (1) 복제되는 것: 복제테이블의 컬럼명, 컬럼의 데이터 타입, NULL 속성
@@ -356,7 +357,7 @@ SELECT * FROM 복제테이블명;
 <br>
 <br>
 
-## **ALTER**
+## **💡 ALTER**
 > 테이블 구조를 변경하는 명령어
 
 (1)변경가능: 컬럼명, 컬럼 데이터타입, 컬럼 사이즈, default 값, 컬럼 삭제, 컬럼 추가, 제약조건 변경
@@ -433,7 +434,7 @@ DROP COLUMN 컬럼명;
 
 <br>
 
-## **DROP**
+## **💡 DROP**
 > DROP: 테이블 또는 INDEX와 같은 객체를 삭제하는 명령어
 
 • DROP 이후에는 조회가 불가능함
@@ -445,7 +446,7 @@ DROP TABLE 테이블명 [PURGE];
 
 <br>
 
-## **TRUNCATE**
+## **💡 TRUNCATE**
 > TRUNCATE: 객체 구조는 남기고 데이터만 삭제하는 명령어
 
 • AUTO COMMIT되므로 RECYCLEBIN에 남지 않고 복구가 불가능함
@@ -456,7 +457,7 @@ TRUNCATE TABLE 테이블명 [PURGE];
 
 <br>
 
-## **DELETE vs DROP vs TRUNCATE**
+## **💡 DELETE vs DROP vs TRUNCATE**
 
 |명령어|설명|ROLEBACK 여부|
 |:---:|:---:|:---:|
@@ -474,13 +475,16 @@ TRUNCATE TABLE 테이블명 [PURGE];
 # DCL(Data Control Language)
 ---
 
-## **DCL(Data Control Language)**
+## **💡 DCL(Data Control Language)**
 > 데이터 제어어
 
 • 객체에 대한 권한을 부여(GRANT)하거나 회수(REVOKE)하는 기능
 • 테이블 소유자는 타계정에 테이블 조회 및 권한을 부여하거나 회수할 수 있음
 
-## **권한**
+<br>
+<br>
+
+## **💡 권한**
 > 특정 사용자나 역할이 데이터베이스 객체(테이블, 뷰, 스키마 등)에 대해 수행할 수 있는 작업을 정의하는 규칙 
 
 **(1) 오브젝터 권한**
@@ -491,8 +495,9 @@ TRUNCATE TABLE 테이블명 [PURGE];
 • 관리자 권한만 권한을 부여하거나 회수 가능
 
 <br>
+<br>
 
-## **GRANT**
+## **💡 GRANT**
 >권한을 부여하는 명령어
 
 **(1) 권한 부여 시**
@@ -503,7 +508,10 @@ TRUNCATE TABLE 테이블명 [PURGE];
 GRANT 권한 ON 테이블명 TO 유저;
 ```
 
-## **REVOKE**
+<br>
+<br>
+
+## **💡 REVOKE**
 > 권한을 회수하는 명령어
 ② 권한 회수 시
 • 동시에 여러 유저로부터 여러 권한 회수 가능
@@ -513,7 +521,10 @@ GRANT 권한 ON 테이블명 TO 유저;
 REVOKE 권한 ON 테이블명 FROM 유저;
 ```
 
-## **ROLE**
+<br>
+<br>
+
+## **💡 ROLE**
 > ROLE: 권한의 묶음, CREATE로 생성할 수 있는 객체
 • SYSTEM 계정에서 ROLE 생성 가능
 • ROLE에서 회수된 권한은 즉시 반영되므로 다시 ROLE을 부여할 필요가 없음
@@ -542,7 +553,7 @@ REVOKE SELECT ON 유저 FROM 롤이름;
 <br>
 <br>
 
-## **권한부여 옵션**
+## **💡 권한부여 옵션**
 > 권한부여 옵션: 중간 관리자를 둘 때 사용하는 옵션
 
 **(1) WITH GRANT OPTION**
@@ -556,7 +567,7 @@ REVOKE SELECT ON 유저 FROM 롤이름;
 
 
 <br>
-<br
+<br>
 
 ## 💡 객체
 
