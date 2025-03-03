@@ -1,9 +1,9 @@
 ---
-title: "[SQLD] 2과목 - 3. 데이터모델링의  이해"
+title: "[SQLD] 2과목 - 3. SQL 기본 및 활용"
 tags:
     - SQLD
     - 데이터모델링의 이해
-date: "2024-01-27"
+date: "2025-03-03"
 thumbnail: "/assets/img/thumbnail/pic1.jpg"
 ---
 
