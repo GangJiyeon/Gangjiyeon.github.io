@@ -9,7 +9,7 @@ thumbnail: "/assets/img/thumbnail/pic1.jpg"
 
 # DML(Data Manipulation Language) 
 ---
-## **💡 DML(Data Manipulation Language) **
+## **💡 DML(Data Manipulation Language)**
 > 데이터 INSERT(삽입), UPDATE(수정), DELETE(삭제), MERGE(병합)을 담당하는 언어
 
 👉 반드시 commit이나 rollback을 통한 트랜젝션 제어가 필요함
@@ -217,12 +217,16 @@ COMMIT 이전을 제외한 사용자가 원하는 위치와 이름으로 설정�
 
 ```sql
 INSERT INTO 테이블 VALUES(1, 2);
-COMMIT;							-- COMIIT 사용하기
 
-SAVEPOINT TO SAVEPOINT명;		-- SAVEPOINT 지정하기
+-- COMIIT 사용하기
+COMMIT;					
 
+-- SAVEPOINT 지정하기
+SAVEPOINT TO SAVEPOINT명;		
 INSERT INTO 테이블명 VALUES(3, 4);
-ROLLBACK TO SAVEPOINT명;		-- ROLEBACK 사용하기
+
+-- ROLEBACK 사용하기
+ROLLBACK TO SAVEPOINT명;		
 ```
 
 
