@@ -253,7 +253,6 @@ ROLLBACK TO SAVEPOINT명;
 
 > 데이터 무결성을 위해 각 컬럼에 생성하는 데이터의 제약 장치
 
-• 테이블 생성, 컬럼 추가 시 정의 가능
 
 **[ 제약조건 정의하기 ]**
 
@@ -294,17 +293,17 @@ DROP CONSTRAINT 제약조건명;
 <br>
 
 ## **제약조건의 종류**
-(1) PRIMARY KEY(기본키)
+**(1) PRIMARY KEY(기본키)**
 • 각 행을 구별할 수 있는 유일한 식별자
 • 중복(UNIQUE), NULL을 허용하지 않음: 컬럼에 PRIMARY KEY를 생성하면 NOT NULL 속성이 자동으로 부여 됨
 • PK 생성 시 자동으로 UNIQUE INDEX를 생성할 수 있음
 • CTAS로 테이블 복사 시 PK, NOT NULL 속성은 복사되지 않음
 • 하나의 테이블에 여러 기본키를 생성할 수 없지만, 여러 컬럼을 결합하여 생성할 수는 있음
-(2) NOT NULL
+**(2) NOT NULL**
 • 다른 제약조건과 달리 컬럼의 특징을 나타내므로 CTAS로 복제가 가능함
 • 컬럼 생성 시에 NOT NULL을 선언하지 않으면 Nullable 컬럼으로 생성
 • 이미 있는 컬럼에 NOT NULL 선언을 하고 싶으면 MODIFY로 해결해야 함
-(3) FOREIGN KEY
+**(3) FOREIGN KEY**
 
 ```sql
 CREATE TABLE 테이블명(
@@ -319,8 +318,8 @@ CREATE TABLE 테이블명(
 • 옵션
 	‣ ON DELETE CASCADE: 부모 데이터 삭제 시 자식 데이터도 같이 삭제
 	‣ ON DELETE SET NULL: 부모 데이터 삭제 시에 자식 데이터의 참조값이 NULL로 변경
-(4) CHECK
-• 직접적으로 데이터의 갑 범위(도메인)을 제한하는 제약조건
+**(4) CHECK**
+• 직접적으로 데이터의 값 범위(도메인)을 제한하는 제약조건
 
 <br>
 <br>
@@ -370,6 +369,7 @@ SELECT * FROM 복제테이블명;
 (2) ORACLE 에서는 괄호를 사용해 여러 컬럼을 동시에 추가할 수 있음
 (3) NOT NULL 속정 지정: DEFAULT 값을 선언하거나 데이터가 없는 경우 가능
 
+
 ```SQL
 ALTER TABLE 테이블명 
 ADD 컬럼명 데이터타입 [DEFAULT] [제약조건];
@@ -382,40 +382,38 @@ ADD 컬럼명 데이터타입 [DEFAULT] [제약조건];
 • 컬럼 사이즈, 데이터 타입, DEFAULT값, 컬럼명 변경 가능
 • 여러 컬럼을 동시에 변경할 수 있음
 
-<br>
 
-(1) 컬럼 사이즈 변경
+**(1) 컬럼 사이즈 변경**
 • 증가는 항상 가능, 축소는 데이터가 존재할 때 데이터의 길이까지만 축소 가능
 • 동시 변경 가능
 
-```SQL
+```sql
 ALTER TABLE 테이블명
 MODIFY 컬럼명(크기), 컬럼명(크기),...;
 ```
 
-(2) 데이터타입 변경
+**(2) 데이터타입 변경**
 • 데이터가 없는 경우 자유롭게 변경 가능
 • CHAR, VARCHAR의 경우에는 데이터가 있어도 서로 변경 가능
 
-```SQL
+```sql
 ALTER TABLE 테이블명
 MODIFY (컬럼명 DEFAULT 값);
 ```
 
-
-(3) DEFAULT 값 변경
+**(3) DEFAULT 값 변경**
 • INSERT 시 DEFAULT값이 선언된 컬럼에 NULL을 직접 입력하면 NULL이 저장
 • 이미 데이터가 존재하는 테이블에 DEFAULT값을 선언할 경우 기존 데이터는 수정되지 않음
 • DEFAULT값을 해제할 경우 DEFAULT값을 NULL로 선언하면 됨
 
-```SQL
+```sql
 ALTER TABLE 테이블명
 MODIFY (컬럼명 DEFAULT 값);
 ```
 
-(4) 컬럼명 변경
+**(4) 컬럼명 변경**
 
-```SQL
+```sql
 ALTER TABLE 테이블명
 RENAME COLUMN 기존컬럼명 TO 바꿀 컬럼명
 ```
@@ -428,7 +426,7 @@ RENAME COLUMN 기존컬럼명 TO 바꿀 컬럼명
 • RECYCLEBIN에 남지 않기때문에 복구가 불가능함
 • 동시에 삭제가 불가능함
 
-```SQL
+```sql
 ALTER TABLE 테이블명
 DROP COLUMN 컬럼명;
 ```
@@ -441,7 +439,7 @@ DROP COLUMN 컬럼명;
 • DROP 이후에는 조회가 불가능함
 • PURGE로 테이블을 삭제하면 RECYCLEBIN에서 조회할 수 없음
 
-```SQL
+```sql
 DROP TABLE 테이블명 [PURGE];
 ```
 
@@ -452,7 +450,7 @@ DROP TABLE 테이블명 [PURGE];
 
 • AUTO COMMIT되므로 RECYCLEBIN에 남지 않고 복구가 불가능함
 
-```SQL
+```sql
 TRUNCATE TABLE 테이블명 [PURGE];
 ```
 
@@ -466,8 +464,6 @@ TRUNCATE TABLE 테이블명 [PURGE];
 |`TRUNCATE`|데이터 전체 삭제|불가능|
 |`DROP`|데이터 구조 삭제|불가능|
 
-<br>
-<br>
 
 <br>
 <br>
@@ -487,36 +483,61 @@ TRUNCATE TABLE 테이블명 [PURGE];
 ## **권한**
 > 특정 사용자나 역할이 데이터베이스 객체(테이블, 뷰, 스키마 등)에 대해 수행할 수 있는 작업을 정의하는 규칙 
 
-(1) 오브젝터 권한
+**(1) 오브젝터 권한**
 • 테이블에 대한 권한을 제어함: SELECT, INSERT, UPDATE, DELETE, MERGE
 • 테이블 소유자는 타계정 소유 테이블에 대해 조회, 수정 권한을 부여하거나 회수 가능
-(2) 시스템 권한
+**(2) 시스템 권한**
 • 시스템 작업에 대한 권한을 제어함: 테이블 생성, 인덱스 삭제
 • 관리자 권한만 권한을 부여하거나 회수 가능
 
+<br>
+
 ## **GRANT**
-① 권한을 부여하는 명령어
-② 권한 부여 시
+>권한을 부여하는 명령어
+
+**(1) 권한 부여 시**
 • 반드시 소유자나 관리자 계정으로 접속해 권한 부여
 • 동시에 여러 유저에 대한 권한 부여 가능, 여러 객체에 대한 권한 부여 불가능
 
+```sql
+GRANT 권한 ON 테이블명 TO 유저;
+```
 
 ## **REVOKE**
-① 권한을 회수하는 명령어
+> 권한을 회수하는 명령어
 ② 권한 회수 시
 • 동시에 여러 유저로부터 여러 권한 회수 가능
 • 이미 회수한 권한을 재회수 하는 것은 불가능 > 오류 발생
 
+```sql
+REVOKE 권한 ON 테이블명 FROM 유저;
+```
 
 ## **ROLE**
 > ROLE: 권한의 묶음, CREATE로 생성할 수 있는 객체
 • SYSTEM 계정에서 ROLE 생성 가능
 • ROLE에서 회수된 권한은 즉시 반영되므로 다시 ROLE을 부여할 필요가 없음
-② ROLE 사용하기
+
+<br>
+
+**[ ROLE 사용하기 ]**
 • ROLE 생성
+
+```sql
+CREATE ROLE 롤이름;
+```
+
 • ROLE 부여
 
+```sql
+GRANT 롤이름 TO 유저;
+```
+
 • ROLE에서 권한 제외
+
+```sql
+REVOKE SELECT ON 유저 FROM 롤이름;
+```
 
 <br>
 <br>
@@ -524,11 +545,11 @@ TRUNCATE TABLE 테이블명 [PURGE];
 ## **권한부여 옵션**
 > 권한부여 옵션: 중간 관리자를 둘 때 사용하는 옵션
 
-(1) WITH GRANT OPTION
+**(1) WITH GRANT OPTION**
 • 받은 오브젝트 권한을 다른 사용자에게 부여할 수 있음
 • 중간관리자가 부여한 권한은 중간관리자만 회수할 수 있음
 • 중간관리자에게 부여된 권한이 회수될 경우 제 3자에게 부여된 권한도 같이 회수됨
-(2) WITH ADMIN OPTION
+**(2) WITH ADMIN OPTION**
 • WITH GRANT OPTION을 통해 부여 받은 시스템 권한이나 ROLL 권한을 다른 사용자에게 부여
 • 중간관리자가 부여한 권한도 총괄관리자가 직접 회수 가능
 •  중간관리자에게 부여된 권한이 회수 될 경우 제 3자에게 부여된 권한은 회수되지 않고 남아있음
@@ -558,6 +579,17 @@ DROP VIEW 뷰명;
 **[ SEQUENCE(시퀀스) ]**
 > SEQUENCE: 자동으로 연속적인 숫자를 부여해주는 객체
 
+```sql
+CREATE SEQUENCE 시퀀스명
+INCREMENT BY	-- 증가값(DEFAULT 1)
+START WITH 		-- 시작값(DEFAULT 1)
+MAXVALUE 		-- 마지막값(증가시퀀스), 재사용 시 시작값(감소시퀀스)
+MINVALUE		-- 시작값(감소시퀀스), 재사용 시 마지막값(증가시퀀스)
+CYCLE | NOCYCLE	-- 시퀀스 번호 재사용
+CACHE N			-- 캐시값(DEFALT 20)
+;
+```
+
 <br>
 
 **[ SYNONYM(시노님) ]**
@@ -570,7 +602,6 @@ DROP VIEW 뷰명;
 • PUBLIC으로 생성한 시노님은 반드시 PUBLIC으로 삭제해야 함
 
 ```sql
-CREATE SEQUENCE 시퀀스명
-ㅑㅜ
+CREATE [OR REPLACE] [PUBLIC] 
+SYNONYM 별칭 FOR 테이블명;
 ```
-
