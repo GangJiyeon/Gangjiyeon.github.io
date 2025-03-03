@@ -2,7 +2,7 @@
 title: "2024년 회고, 2025년 계획"
 tags:
 date: "2025-02-24"
-thumbnail: "/assets/img/thumbnail/book.jpg"
+thumbnail: "/assets/img/thumbnail/gre.jpg"
 ---
 
 2024년은 정말정말 너무 소중하고, 슬픈 한 해였다
