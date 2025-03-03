@@ -18,7 +18,6 @@ thumbnail: "/assets/img/thumbnail/pic1.jpg"
 <br>
 <br>
 
-<hr style="margin: auto, width: 200px";>
 
 ## **💡 INSERT**
 > 테이블에 행을 삽입할 때 사용
