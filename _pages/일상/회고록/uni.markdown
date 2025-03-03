@@ -2,7 +2,7 @@
 title: "부경대, 인제대 컴퓨터공학과 편입 후기"
 tags:
 date: "2025-02-23"
-thumbnail: "/assets/img/thumbnail/gre.jpg"
+thumbnail: "/assets/img/thumbnail/gre.png"
 ---
 
 쓸까 말까 고민했는데, 부경대 컴퓨터공학과를 목표로 준비하는 사람이 많이 없는 것인지
