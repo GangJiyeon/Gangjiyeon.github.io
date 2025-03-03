@@ -10,7 +10,7 @@ thumbnail: "/assets/img/thumbnail/pic1.jpg"
 
 # DML(Data Manipulation Language) 
 ---
-## DML
+## 💡DML
 > 데이터 INSERT(삽입), UPDATE(수정), DELETE(삭제), MERGE(병합)을 담당하는 언어
 
 👉 반드시 commit이나 rollback을 통한 트랜젝션 제어가 필요함
@@ -18,7 +18,7 @@ thumbnail: "/assets/img/thumbnail/pic1.jpg"
 <br>
 <br>
 
-## INSERT
+## 💡INSERT
 > 테이블에 행을 삽입할 때 사용
 
 • ORACLE: 모든 삭제와 삽입의 단위는 행이므로, 한 번에 한 행만 입력가능
@@ -66,7 +66,7 @@ VALUES (값1, 값2, ...);
 <br>
 <br>
 
-## UPDATE
+## 💡UPDATE
 > 데이터를 수정할 때 사용
 
 <br>
@@ -106,7 +106,7 @@ WHERE 조건;
 <br>
 <br>
 
-## DELETE
+## 💡DELETE
 > 데이터를 삭제할 때 사용, 행단위 실행
 
 <br>
@@ -133,7 +133,7 @@ DELETE
 <br>
 <br>
 
-## MERGE
+## 💡MERGE
 > 참조 테이블을 기준으로 다른 테이블을 수정하는 것으로 데이터 병합 시 사용
 
 <br>
@@ -165,7 +165,7 @@ WHEN NOT MATCHED THEN
 # TCL(Transaction Control Language) 
 ---
 
-## 트랜잭션
+## 💡트랜잭션
 > 트랜잭션: 데이터베이스의 논리적 연산 단위(하나의 연속적인 업무 단위)
 
 👉 분할 할 수 없음, 모두 COMMIT하거나 ROLLBACK 처리 해야함
@@ -181,7 +181,7 @@ WHEN NOT MATCHED THEN
 <br>
 <br>
 
-## TCL(Transation Control Language)
+## 💡TCL(Transation Control Language)
 > 트랜잭션 제어어: DML에 의해 조작된 결과를 작업단위 별로 제어하는 명령어
 
 •  COMMIT과 ROLLBACK 포함
@@ -192,23 +192,44 @@ WHEN NOT MATCHED THEN
 <br>
 <br>
 
-## COMMIT
-① 입력, 수정, 삭제한 데이터에 이상이 없을 경우 데이터를 저장하는 명령어
-② 한번 COMMIT을 수행하면 COMMIT 이전에 수행된 DML은 되돌릴 수 없음
+## 💡COMMIT과 ROLLBACK
+> COMMIT: 입력, 수정, 삭제한 데이터에 이상이 없을 경우 데이터를 저장하는 명령어
+> ROLEBACK: 테이블 내 입력한 데이터나 수정한 데이터, 삭제한 데이터에 대해 변경을 취소하는 명령어
+
+<br>
+
+**[ COMMIT 규칙 ]**
+• 한번 COMMIT을 수행하면 COMMIT 이전에 수행된 DML은 되돌릴 수 없음
 • ORACLE: DDL 시 AUTO COMMIT(23c 이전)
 • SQL Server: AUTO COMMIT 비활성화 설정 가능 
 
-<br>
-<br
-
-## ROLLBACK
-① 테이블 내 입력한 데이터나 수정한 데이터, 삭제한 데이터에 대해 변경을 취소하는 명령어
-②  데이터베이스에 저장되지 않고 최종 COMMIT 지점, 변경 전, SAVEPOINT 지점 중 하나로 원복
+**[ ROLLBACK 규칙 ]**
+• 데이터베이스에 저장되지 않고 최종 COMMIT 지점, 변경 전, SAVEPOINT 지점 중 하나로 원복
 • 최종 COMMIT 시점 이전까지 ROLLBACK 가능
-• SAVEPOINT를 설정하여 최종 COMMIT 시점이 아닌, 그 이후의 원하는 시점으로 원복가능
-
-SAVEPOINT: 트랜잭션 내에서 롤백을 부분적을 수행하기 위해 사용되는 지점
+> SAVEPOINT: 트랜잭션 내에서 롤백을 부분적을 수행하기 위해 사용되는 지점
 COMMIT 이전을 제외한 사용자가 원하는 위치와 이름으로 설정가능
+
+<br>
+
+**[ 사용하기 ]**
+
+```sql
+
+INSERT INTO 테이블 VALUES(1, 2);
+
+-- COMIIT 사용하기
+COMMIT;
+
+-- SAVEPOINT 지정하기
+SAVEPOINT TO SAVEPOINT명;
+
+INSERT INTO 테이블명 VALUES(3, 4);
+
+-- ROLEBACK 사용하기
+ROLLBACK TO SAVEPOINT명;
+```
+
+
 
 
 <br>
@@ -218,16 +239,55 @@ COMMIT 이전을 제외한 사용자가 원하는 위치와 이름으로 설정�
 # DDL(Data Definition Language) 
 ---
 
-## DDL(Data Definition Language)
+## 💡DDL(Data Definition Language)
 > 데이터 정의어로 객체 생성, 변경, 삭제 등 데이터 구조를 정의하는 언어
 
-• CREATE(객체생성), ALTER(객체변경), DROP(객체삭제), TRUNCATE(구조는 유지하고 데이터삭제)
-• AUTO COMMIT: 명령어를 수행하면 자동 저장되므로 원 상태로 복구할 수 없음
+• 종류: CREATE(객체생성), ALTER(객체변경), DROP(객체삭제), TRUNCATE(구조는 유지하고 데이터삭제)
+• ORACLE은 AUTO COMMIT(자동 저장돼 복구X) O, SQL Server X
+
 
 <br>
 <br>
 
-## CREATE
+## 💡 객체
+
+**[ View(뷰) ]**
+> 테이블처럼 물리적으로 디스크에 저장되지는 않지만 메타 데이터가 생성되어 조회 및 수정할 수 있는 객체
+
+• 자주 사용하는 쿼리를 View로 설정하면 별칭처럼 간단하게 사용할 수 있음
+
+```sql
+-- 뷰 생성
+CREATE [OR REPLACE] VIEW 뷰이름
+AS 조회쿼리;
+
+-- 뷰 삭제
+DROP VIEW 뷰명;
+```
+
+<br>
+
+**[ SEQUENCE(시퀀스) ]**
+> SEQUENCE: 자동으로 연속적인 숫자를 부여해주는 객체
+
+<br>
+
+**[ SYNONYM(시노님) ]**
+> SYNONYM: 테이블의 별칭을 생성하는 객체
+
+(1) 본인 소유 테이블이 아니더라도 테이블의 별칭을 붙여 간단하게 조회할 수 있음
+(2) 사용하기
+• OR REPLACE: 기존에 같은 이름으로 시노님이 생성되어 있는 경우에 대체
+• PUBLIC: 시노님을 생성한 유저만 사용 가능한 PRIVATE SYNONYM의 반대로 누구나 사용 가능
+• PUBLIC으로 생성한 시노님은 반드시 PUBLIC으로 삭제해야 함
+
+```sql
+CREATE SEQUENCE 시퀀스명
+ㅑㅜ
+```
+
+
+## 💡CREATE
 > 테이블이나 인덱스와 같은 객체를 생성하는 명령어
 
 ① 테이블 생성하기
@@ -241,7 +301,7 @@ COMMIT 이전을 제외한 사용자가 원하는 위치와 이름으로 설정�
 <br>
 <br>
 
-## ALTER
+## 💡ALTER
 => 테이블 구조를 변경하는 명령어
 • 컬럼명, 컬럼 데이터타입, 컬럼 사이즈, default 값, 컬럼 삭제, 컬럼 추가, 제약조건 변경
 • 컬럼순서는 변경할 수 없고, 재생성으로 해결해야함
@@ -277,20 +337,20 @@ COMMIT 이전을 제외한 사용자가 원하는 위치와 이름으로 설정�
 
 <br>
 
-## DROP
+## 💡DROP
 ① DROP: 테이블 또는 INDEX와 같은 객체를 삭제하는 명령어
 • DROP 이후에는 조회가 불가능함
 • PURGE로 테이블을 삭제하면 RECYCLEBIN에서 조회할 수 없음
 
 <br>
 
-## TRUNCATE
+## 💡TRUNCATE
 ① TRUNCATE: 객체 구조는 남기고 데이터만 삭제하는 명령어
 • AUTO COMMIT되므로 RECYCLEBIN에 남지 않고 복구가 불가능함
 
 <br>
 
-## DELETE vs DROP vs TRUNCATE
+## 💡DELETE vs DROP vs TRUNCATE
 
 <br>
 
@@ -306,7 +366,7 @@ COMMIT 이전을 제외한 사용자가 원하는 위치와 이름으로 설정�
 
 <br>
 
-## 제약조건의 종류
+## 💡제약조건의 종류
 ① PRIMARY KEY(기본키)
 • 각 행을 구별할 수 있는 유일한 식별자
 • 중복(UNIQUE), NULL을 허용하지 않음: 컬럼에 PRIMARY KEY를 생성하면 NOT NULL 속성이 자동으로 부여 됨 • PK 생성 시 자동으로 UNIQUE INDEX를 생성할 수 있음
@@ -328,33 +388,18 @@ COMMIT 이전을 제외한 사용자가 원하는 위치와 이름으로 설정�
 
 <br>
 
-## View(뷰)
-① 뷰: 테이블처럼 물리적으로 디스크에 저장되지는 않지만 메타 데이터가 생성되어 조회 및 수정할 수 있는 객체
-• 자주 사용하는 쿼리를 View로 설정하면 별칭처럼 간단하게 사용할 수 있음 ② 뷰 설정하기
 
-<br>
-
-## SEQUENCE(시퀀스)
-① SEQUENCE: 자동으로 연속적인 숫자를 부여해주는 객체
-
-<br>
-
-## SYNONYM(시노님)
-① SYNONYM: 테이블의 별칭을 생성하는 객체
-② 본인 소유 테이블이 아니더라도 테이블의 별칭을 붙여 간단하게 조회할 수 있음 ③ 사용하기 • OR REPLACE: 기존에 같은 이름으로 시노님이 생성되어 있는 경우에 대체
-• PUBLIC: 시노님을 생성한 유저만 사용 가능한 PRIVATE SYNONYM의 반대로 누구나 사용 가능
-• PUBLIC으로 생성한 시노님은 반드시 PUBLIC으로 삭제해야 함
 
 
 
 [ DCL(Data Control Language) ]
 
-# DCL(Data Control Language)
+# 💡DCL(Data Control Language)
 ① 데이터 제어어
 • 객체에 대한 권한을 부여(GRANT)하거나 회수(REVOKE)하는 기능
 • 테이블 소유자는 타계정에 테이블 조회 및 권한을 부여하거나 회수할 수 있음
 
-# 권한
+# 💡권한
 ① 정의: 
 ② 종류
 • 오브젝터 권한
@@ -364,21 +409,21 @@ COMMIT 이전을 제외한 사용자가 원하는 위치와 이름으로 설정�
 	- 시스템 작업에 대한 권한을 제어함: 테이블 생성, 인덱스 삭제
 	- 관리자 권한만 권한을 부여하거나 회수 가능
 
-# GRANT
+# 💡GRANT
 ① 권한을 부여하는 명령어
 ② 권한 부여 시
 • 반드시 소유자나 관리자 계정으로 접속해 권한 부여
 • 동시에 여러 유저에 대한 권한 부여 가능, 여러 객체에 대한 권한 부여 불가능
 
 
-# REVOKE
+# 💡REVOKE
 ① 권한을 회수하는 명령어 ② 권한 회수 시
 • 동시에 여러 유저로부터 여러 권한 회수 가능
 • 이미 회수한 권한을 재회수 하는 것은 불가능 > 오류 발생
 
 
-# ROLE
-① 정의: 권한의 묶음, CREATE로 생성할 수 있는 객체
+# 💡**ROLE**
+> ROLE: 권한의 묶음, CREATE로 생성할 수 있는 객체
 • SYSTEM 계정에서 ROLE 생성 가능
 • ROLE에서 회수된 권한은 즉시 반영되므로 다시 ROLE을 부여할 필요가 없음
 ② ROLE 사용하기
@@ -388,8 +433,8 @@ COMMIT 이전을 제외한 사용자가 원하는 위치와 이름으로 설정�
 • ROLE에서 권한 제외
 
 
-# 권한부여 옵션
-① 정의: 중간 관리자를 둘 때 사용하는 옵션
+## 💡권한부여 옵션
+> 권한부여 옵션: 중간 관리자를 둘 때 사용하는 옵션
 ② 종류
 • WITH GRANT OPTION
 	- 받은 오브젝트 권한을 다른 사용자에게 부여할 수 있음
