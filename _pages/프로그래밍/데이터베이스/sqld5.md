@@ -1,8 +1,7 @@
 ---
-title: "[SQLD] 2과목 - 3. SQL 기본 및 활용"
+title: "[SQLD] 2과목 - 3. 관리구문"
 tags:
     - SQLD
-    - 데이터모델링의 이해
 date: "2025-03-03"
 thumbnail: "/assets/img/thumbnail/pic1.jpg"
 ---
@@ -10,7 +9,7 @@ thumbnail: "/assets/img/thumbnail/pic1.jpg"
 
 # DML(Data Manipulation Language) 
 ---
-## **💡 DML**
+## **💡 DML(Data Manipulation Language) **
 > 데이터 INSERT(삽입), UPDATE(수정), DELETE(삭제), MERGE(병합)을 담당하는 언어
 
 👉 반드시 commit이나 rollback을 통한 트랜젝션 제어가 필요함
@@ -252,6 +251,37 @@ ROLLBACK TO SAVEPOINT명;		-- ROLEBACK 사용하기
 
 <br>
 
+**[ 제약조건의 종류 ]**
+**(1) PRIMARY KEY(기본키)**
+• 각 행을 구별할 수 있는 유일한 식별자
+• 중복(UNIQUE), NULL을 허용하지 않음: 컬럼에 PRIMARY KEY를 생성하면 NOT NULL 속성이 자동으로 부여 됨
+• PK 생성 시 자동으로 UNIQUE INDEX를 생성할 수 있음
+• CTAS로 테이블 복사 시 PK, NOT NULL 속성은 복사되지 않음
+• 하나의 테이블에 여러 기본키를 생성할 수 없지만, 여러 컬럼을 결합하여 생성할 수는 있음
+**(2) NOT NULL**
+• 다른 제약조건과 달리 컬럼의 특징을 나타내므로 CTAS로 복제가 가능함
+• 컬럼 생성 시에 NOT NULL을 선언하지 않으면 Nullable 컬럼으로 생성
+• 이미 있는 컬럼에 NOT NULL 선언을 하고 싶으면 MODIFY로 해결해야 함
+**(3) FOREIGN KEY**
+
+```sql
+CREATE TABLE 테이블명(
+	컬럼1 데이터타입 [DEFAULT 값] PREPERENCES 참조테이블명(참조키),
+	컬럼2 데이터타입 [DEFAULT 값] PREPERENCES 참조테이블명(참조키),
+	...
+)
+```
+
+• 참조 테이블의 참조 컬럼에 있는 데이터를 확인하면서 본 테이블 데이터를 관리하기 위해 생성
+• 반드시 참조 테이블의 참조 컬럼이 PK나 UNIQUE KEY를 가져야 함
+• 옵션
+	‣ ON DELETE CASCADE: 부모 데이터 삭제 시 자식 데이터도 같이 삭제
+	‣ ON DELETE SET NULL: 부모 데이터 삭제 시에 자식 데이터의 참조값이 NULL로 변경
+**(4) CHECK**
+• 직접적으로 데이터의 값 범위(도메인)을 제한하는 제약조건
+
+<br>
+
 **[ 제약조건 정의하기 ]**
 
 • 테이블을 생성할 때 제약조건 정의하기
@@ -290,39 +320,11 @@ DROP CONSTRAINT 제약조건명;
 <br>
 <br>
 
-## **💡 제약조건의 종류**
-**(1) PRIMARY KEY(기본키)**
-• 각 행을 구별할 수 있는 유일한 식별자
-• 중복(UNIQUE), NULL을 허용하지 않음: 컬럼에 PRIMARY KEY를 생성하면 NOT NULL 속성이 자동으로 부여 됨
-• PK 생성 시 자동으로 UNIQUE INDEX를 생성할 수 있음
-• CTAS로 테이블 복사 시 PK, NOT NULL 속성은 복사되지 않음
-• 하나의 테이블에 여러 기본키를 생성할 수 없지만, 여러 컬럼을 결합하여 생성할 수는 있음
-**(2) NOT NULL**
-• 다른 제약조건과 달리 컬럼의 특징을 나타내므로 CTAS로 복제가 가능함
-• 컬럼 생성 시에 NOT NULL을 선언하지 않으면 Nullable 컬럼으로 생성
-• 이미 있는 컬럼에 NOT NULL 선언을 하고 싶으면 MODIFY로 해결해야 함
-**(3) FOREIGN KEY**
 
-```sql
-CREATE TABLE 테이블명(
-	컬럼1 데이터타입 [DEFAULT 값] PREPERENCES 참조테이블명(참조키),
-	컬럼2 데이터타입 [DEFAULT 값] PREPERENCES 참조테이블명(참조키),
-	...
-)
-```
 
-• 참조 테이블의 참조 컬럼에 있는 데이터를 확인하면서 본 테이블 데이터를 관리하기 위해 생성
-• 반드시 참조 테이블의 참조 컬럼이 PK나 UNIQUE KEY를 가져야 함
-• 옵션
-	‣ ON DELETE CASCADE: 부모 데이터 삭제 시 자식 데이터도 같이 삭제
-	‣ ON DELETE SET NULL: 부모 데이터 삭제 시에 자식 데이터의 참조값이 NULL로 변경
-**(4) CHECK**
-• 직접적으로 데이터의 값 범위(도메인)을 제한하는 제약조건
 
-<br>
-<br>
 
-## **CREATE**
+## **💡 CREATE**
 > 테이블이나 인덱스와 같은 객체를 생성하는 명령어
 
 <br>
@@ -434,6 +436,7 @@ DROP COLUMN 컬럼명;
 ```
 
 <br>
+<br>
 
 ## **💡 DROP**
 > DROP: 테이블 또는 INDEX와 같은 객체를 삭제하는 명령어
@@ -446,6 +449,7 @@ DROP TABLE 테이블명 [PURGE];
 ```
 
 <br>
+<br>
 
 ## **💡 TRUNCATE**
 > TRUNCATE: 객체 구조는 남기고 데이터만 삭제하는 명령어
@@ -456,6 +460,7 @@ DROP TABLE 테이블명 [PURGE];
 TRUNCATE TABLE 테이블명 [PURGE];
 ```
 
+<br>
 <br>
 
 ## **💡 DELETE vs DROP vs TRUNCATE**
@@ -501,7 +506,6 @@ TRUNCATE TABLE 테이블명 [PURGE];
 ## **💡 GRANT**
 >권한을 부여하는 명령어
 
-**(1) 권한 부여 시**
 • 반드시 소유자나 관리자 계정으로 접속해 권한 부여
 • 동시에 여러 유저에 대한 권한 부여 가능, 여러 객체에 대한 권한 부여 불가능
 
@@ -514,7 +518,8 @@ GRANT 권한 ON 테이블명 TO 유저;
 
 ## **💡 REVOKE**
 > 권한을 회수하는 명령어
-② 권한 회수 시
+
+권한 회수 시
 • 동시에 여러 유저로부터 여러 권한 회수 가능
 • 이미 회수한 권한을 재회수 하는 것은 불가능 > 오류 발생
 
