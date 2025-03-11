@@ -27,22 +27,39 @@ thumbnail: "/assets/img/thumbnail/book.jpg"
 |사용|모두 현재 사용|사용되고 있지 않은(미래에 사용될 수 있는) 단어도 존재|
 |예시|`class`, `public` 등|키워드, `goto`, `const` 등 사용되지 않는 단어|
 
-> 즉, 키워드는 프로그래밍에 실제 사용되는 단어이고, 예약어는 단순히 예약된 단어(키워드 + 현재 사용되지 않지만 미래를 위해 예약된 단어)를 의미한다
+> 즉, 키워드는 `프로그래밍에 실제 사용되는 단어`이고, 예약어는 `단순히 예약된 단어 (키워드 + 현재 사용되지 않지만 미래를 위해 예약된 단어)`를 의미한다
 
 
 <br>
 
 
-## **키워드(예약어)의 종류?**
-> 자바에서 미리 정의된
+## **키워드(예약어)의 종류**
+
+|구분|키워드(예약어)|
+|:---:|:---:|
+|자료형|`byte`, `short`, `int`, `long`,`float`, `double`, `char`, `boolean`|
+|제어문|`if`, `else`, `switch`, `case`, `default`, `while`, `do`, `for`, `break`, `continue`, `return`|
+|접근제어자|`publice`, `private`, `protected`, `default(예약어X)`|
+|클래스 및 객체|`class`, `interface`, `extends`, `implements`, `new`, `this`, `super`, `abstract`, `final`, `static`|
+|예외 처리|`try`, `catch`, `finally`, `throw`, `throws`|
+|패키지/임포트|`package`, `import`|
+|예약어|`instanceof`, `enum`, `native`, `strictfp`, `transient`, `assert`|
+
 <br> 
 <br>
 <br>
 
 
+
 # **자료형**
 ---
 
+|자료형 구분|종류|
+|:---:|:---:|
+|정수형|`byte(8bit)`, `short(16bit)`, `int(32bit)`, `long(64bit)`|
+|실수형|`float(32bit)`, `double(64bit)`|
+|문자형|`char(16bit)`|
+|불리언형|`boolean(true, false)`|
 
 
 <br>
