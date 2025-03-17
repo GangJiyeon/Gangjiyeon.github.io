@@ -2,7 +2,7 @@
 title: "[Java] 자바 기초 총정리 2 - 변수"
 tags:
     - Java기초
-date: "2025-03-18"
+date: "2025-03-17"
 thumbnail: "/assets/img/thumbnail/book.jpg"
 ---
 
