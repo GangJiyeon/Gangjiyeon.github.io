@@ -2,7 +2,7 @@
 title: "[Java] 자바 기초 총정리"
 tags:
     - Java기초
-date: "2024-03-10"
+date: "2025-03-10"
 thumbnail: "/assets/img/thumbnail/book.jpg"
 ---
 
