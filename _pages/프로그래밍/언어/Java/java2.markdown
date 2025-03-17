@@ -43,9 +43,10 @@ Person p = new Person();  // 객체도 참조 변수
 ```
 
 > **`null`을 저장할 수도 있음 (주소가 없음)**  
-> ```java
-> Person p = null;  // 참조 변수, 현재 어떤 객체도 가리키지 않음
-> ```
+
+```java
+Person p = null;  // 참조 변수, 현재 어떤 객체도 가리키지 않음
+```
 
 <br>
 
@@ -63,6 +64,8 @@ class Car {
 
 > **멤버 변수는 자동으로 기본값이 할당됨**  
 (`int` → `0`, `boolean` → `false`, `String` → `null`)
+
+<br>
 
 
 ## **4. 클래스 변수 (Static Variable)**
@@ -82,6 +85,8 @@ class Student {
 ```
 
 > **`Student.totalStudents` 로 접근 가능** (객체를 생성하지 않아도 접근 가능)
+
+<br>
 
 ## **5. 인스턴스 변수 (Instance Variable)**
 - `new` 키워드로 객체를 생성할 때 **각 객체마다 별도로 할당되는 변수**
@@ -108,6 +113,8 @@ p2.age = 30;
 
 > **`p1.name`과 `p2.name`은 서로 다른 변수! (객체마다 별도로 존재)**
 
+<br>
+
 ## **6. 지역 변수 (Local Variable)**
 - 메서드, 생성자, 또는 블록 `{}` 내부에서 선언된 변수
 - 해당 블록이 실행될 때 생성되고, 블록이 종료되면 삭제됨 (스택에 저장)
@@ -121,6 +128,8 @@ void myMethod() {
 ```
 
 > **`localVar`는 `myMethod()` 블록 안에서만 유효하고, 밖에서는 접근 불가**
+
+<br>
 
 ## **7. 매개 변수 (Parameter Variable)**
 - **메서드의 인자로 전달되는 변수**
