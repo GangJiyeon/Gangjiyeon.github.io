@@ -54,13 +54,110 @@ thumbnail: "/assets/img/thumbnail/book.jpg"
 # **자료형**
 ---
 
+## **자료형이란?**
+
+> `자료형(Data Type)`은 `변수에 저장할 수 있는 값의 종류`를 정의하며, 크게 **기본 자료형(Primitive Type)**과 **참조 자료형(Reference Type)**으로 나뉜다
+
+|구분|기본자료형|참조자료형|
+|:---:|:---:|:---:|
+|저장방식|값 자체를 저장|객체의 주소값 저장|
+|크기|고정 크기|동적 크기 가능|
+|메모리 저장영역|스택(stack)|힙(heap)|
+|기본값|`0`, `false` 등|`null`|
+
+<br>
+
+**기본자료형**
+> 자바에서 직접 값을 저장하는 데이터 타입
+
 |자료형 구분|종류|
 |:---:|:---:|
-|정수형|`byte(8bit)`, `short(16bit)`, `int(32bit)`, `long(64bit)`|
-|실수형|`float(32bit)`, `double(64bit)`|
-|문자형|`char(16bit)`|
-|불리언형|`boolean(true, false)`|
+|정수형|`byte`: 1byte, default 0, -128 ~ 127 <br>
+`short`: 2byte, default 0, -32,768 ~ 32,767 <br> 
+`int`: 4byte, default 0, -2,147,483,648 ~ 2,147,483,647 <br>
+`long`: 8byte, default 0L, -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807|
+|실수형|`float`: 4byte, default 0.0f, 32비트 부동소수점 (소수점 이하 약 7자리 정밀도) <br>
+`double`: 8byte, default 0.0d, 64비트 부동소수점 (소수점 이하 약 15자리 정밀도)|
+|문자형|`char`: 2byte, default \u0000, 유니코드 문자 (0~65535)|
+|불리언형|`boolean`: 1byte, default false, true, false|
 
+<br>
+
+**참조자료형**
+> 객체의 주소값을 저장하는 타입
+
+(1) 배열 (array): 같은 타입의 데이터를 연속적(메모리상 연속된 공간에)으로 저장하는 자료구조
+• 한 번 크기를 정하면 변경할 수 없음
+• 배열 사용하기
+
+```java
+/* 배열 선언 후 초기화 */
+// 배열 선언하기
+int[] numbers;  // 권장
+int numbers2[]; // 비권장, 하지만 가능
+
+// 배열 초기화(Initialization) > 할당
+int [] numbers = new int[5];    // java default값을 초기값으로 지정
+````
+
+```java
+/* 배열 선언과 초기화를 동시에 */
+// 방법 1: 배열 리터럴 사용
+int[] numbers = {1, 2, 3, 4, 5};    // 명시적으로 초기화(할당)
+
+// 방법 2: new 연산자 사용
+int[] numbers2 = new int[]{10, 20, 30};
+
+// 방법 3: 개별 값 할당
+int[] numbers3 = new int[3];
+numbers3[0] = 100;
+numbers3[1] = 200;
+numbers3[2] = 300;
+```
+
+• 2차원 배열 사용하기
+
+```java
+// 2차원 배열 선언 및 크기 지정
+int[][] matrix = new int[3][3];  // 3x3 배열 (초기값: 0)
+
+// 2차원 배열 초기화 (직접 할당)
+int[][] matrix2 = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+// 개별 요소 접근
+matrix[0][0] = 10;  // 첫 번째 행, 첫 번째 열 값 변경
+
+```
+
+
+(2) 클래스(class): 사용자가 정의한 객체를 생성하는 데이터 타입
+
+```java
+class Person {
+    String name;
+    int age;
+}
+````
+
+(3) 인터페이스(interface): 다형성을 구현하기 위해 사용하는 참조형 타입
+
+```java
+interface Animal {
+    void makeSound();
+}
+````
+
+(4) 문자열(string): 문자들의 집합이며, `String` 클래스의 객체로 취급됨
+
+```java
+String message = "Hello, Java!";
+````
+
+class, 인터페이스, 문자열은 이후의 글에서 더 알아보도록 하자
 
 <br>
 <br>
