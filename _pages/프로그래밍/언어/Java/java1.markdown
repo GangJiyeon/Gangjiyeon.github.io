@@ -67,23 +67,19 @@ thumbnail: "/assets/img/thumbnail/book.jpg"
 
 <br>
 
-**기본자료형**
+## **기본자료형**
 > 자바에서 직접 값을 저장하는 데이터 타입
 
 |자료형 구분|종류|
 |:---:|:---:|
-|정수형|`byte`: 1byte, default 0, -128 ~ 127 <br>
-`short`: 2byte, default 0, -32,768 ~ 32,767 <br> 
-`int`: 4byte, default 0, -2,147,483,648 ~ 2,147,483,647 <br>
-`long`: 8byte, default 0L, -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807|
-|실수형|`float`: 4byte, default 0.0f, 32비트 부동소수점 (소수점 이하 약 7자리 정밀도) <br>
-`double`: 8byte, default 0.0d, 64비트 부동소수점 (소수점 이하 약 15자리 정밀도)|
+|정수형|`byte`: 1byte, default 0, -128 ~ 127 <br>`short`: 2byte, default 0, -32,768 ~ 32,767 <br> `int`: 4byte, default 0, -2,147,483,648 ~ 2,147,483,647 <br>`long`: 8byte, default 0L, -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807|
+|실수형|`float`: 4byte, default 0.0f, 32비트 부동소수점 (소수점 이하 약 7자리 정밀도) <br>`double`: 8byte, default 0.0d, 64비트 부동소수점 (소수점 이하 약 15자리 정밀도)|
 |문자형|`char`: 2byte, default \u0000, 유니코드 문자 (0~65535)|
 |불리언형|`boolean`: 1byte, default false, true, false|
 
 <br>
 
-**참조자료형**
+## **참조자료형**
 > 객체의 주소값을 저장하는 타입
 
 (1) 배열 (array): 같은 타입의 데이터를 연속적(메모리상 연속된 공간에)으로 저장하는 자료구조
@@ -133,6 +129,8 @@ matrix[0][0] = 10;  // 첫 번째 행, 첫 번째 열 값 변경
 
 ```
 
+<br>
+
 
 (2) 클래스(class): 사용자가 정의한 객체를 생성하는 데이터 타입
 
@@ -143,6 +141,8 @@ class Person {
 }
 ````
 
+<br>
+
 (3) 인터페이스(interface): 다형성을 구현하기 위해 사용하는 참조형 타입
 
 ```java
@@ -150,6 +150,9 @@ interface Animal {
     void makeSound();
 }
 ````
+
+<br>
+
 
 (4) 문자열(string): 문자들의 집합이며, `String` 클래스의 객체로 취급됨
 
