@@ -42,7 +42,7 @@ int[] numbers = {1, 2, 3};  // 배열도 참조 변수
 Person p = new Person();  // 객체도 참조 변수
 ```
 
-> **`null`을 저장할 수도 있음 (주소가 없음)**  
+> `null`을 저장할 수도 있음 (주소가 없음)
 
 ```java
 Person p = null;  // 참조 변수, 현재 어떤 객체도 가리키지 않음
@@ -84,7 +84,7 @@ class Student {
 }
 ```
 
-> **`Student.totalStudents` 로 접근 가능** (객체를 생성하지 않아도 접근 가능)
+> `Student.totalStudents` 로 접근 가능 (객체를 생성하지 않아도 접근 가능)
 
 <br>
 
@@ -111,7 +111,7 @@ p2.name = "Bob";
 p2.age = 30;
 ```
 
-> **`p1.name`과 `p2.name`은 서로 다른 변수! (객체마다 별도로 존재)**
+> `p1.name`과 `p2.name`은 서로 다른 변수! (객체마다 별도로 존재)
 
 <br>
 
@@ -127,7 +127,7 @@ void myMethod() {
 }
 ```
 
-> **`localVar`는 `myMethod()` 블록 안에서만 유효하고, 밖에서는 접근 불가**
+> `localVar`는 `myMethod()` 블록 안에서만 유효하고, 밖에서는 접근 불가
 
 <br>
 
@@ -143,7 +143,7 @@ void greet(String name) {  // 매개변수 name
 }
 ```
 
-> **`greet("Alice")`를 호출하면 `name = "Alice"`가 됨. 메서드 실행 후 사라짐.**
+> `greet("Alice")`를 호출하면 `name = "Alice"`가 됨. 메서드 실행 후 사라짐
 
 <br>
 <br>
@@ -188,4 +188,3 @@ void greet(String name) {  // 매개변수 name
 - **인스턴스 변수** → 객체별로 독립적인 변수
 - **지역 변수** → 특정 블록 내에서만 유효한 변수
 - **매개 변수** → 메서드 호출 시 전달되는 값
-\
