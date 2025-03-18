@@ -1,8 +1,8 @@
 ---
-title: "[Java] 자바 객체지향 - 클래스, 인스턴스"
+title: "[Java객체지향] 클래스와 객체, 접근제어자, 메모리"
 tags:
-    - Java기초
-date: "2025-03-18"
+    - Java객체지향
+date: "2025-03-13"
 thumbnail: "/assets/img/thumbnail/book.jpg"
 ---
 # **자바 클래스**
@@ -11,6 +11,14 @@ thumbnail: "/assets/img/thumbnail/book.jpg"
 <br>
 <br>
 <br>
+
+# **자바 객체**
+
+
+<br>
+<br>
+<br>
+
 
 # **자바 접근 제어자**
 
