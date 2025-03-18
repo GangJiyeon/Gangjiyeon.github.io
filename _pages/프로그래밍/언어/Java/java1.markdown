@@ -1,75 +1,10 @@
 ---
-title: "[Java] 자바 기초 총정리"
+title: "[Java] 자바 기초 총정리 - 자료형, 연산자, 제어문"
 tags:
     - Java기초
-date: "2025-03-10"
+date: "2025-03-11"
 thumbnail: "/assets/img/thumbnail/book.jpg"
 ---
-
-이번에 학교에서 객체지향 프로그래밍 수업을 듣게되었는데,
-자바개념을 다시 복습하는 것이 좋을 것 같아서 주요 개념을 몽땅 정리해보려고 한다
-
-<br>
-
-# **키워드와 예약어**
----
-
-자바에서 `키워드(Keyword)`와 `예약어(Reserved Word)`는 종종 같은 의미로 사용되는데, 엄밀히 따지면 약간 차이가 있다
-
-<br>
-
-## **키워드란 VS 예약어**
-
-|비교|키워드|예약어|
-|:---:|:---:|:---:|
-|정의|특정 기능을 수행하는 자바의 필수적인 단어|자바에서 미리 정의된 단어|
-|변수/클래스/메서드명으로 사용|불가능|불가능|
-|사용|모두 현재 사용|사용되고 있지 않은(미래에 사용될 수 있는) 단어도 존재|
-|예시|`class`, `public` 등|키워드, `goto`, `const` 등 사용되지 않는 단어|
-
-> 즉, 키워드는 `프로그래밍에 실제 사용되는 단어`이고, 예약어는 `단순히 예약된 단어 (키워드 + 현재 사용되지 않지만 미래를 위해 예약된 단어)`를 의미한다
-
-
-<br>
-
-
-## **키워드(예약어)의 종류**
-
-|구분|키워드(예약어)|
-|:---:|:---:|
-|자료형|`byte`, `short`, `int`, `long`,`float`, `double`, `char`, `boolean`|
-|제어문|`if`, `else`, `switch`, `case`, `default`, `while`, `do`, `for`, `break`, `continue`, `return`|
-|접근제어자|`publice`, `private`, `protected`, `default(예약어X)`|
-|클래스 및 객체|`class`, `interface`, `extends`, `implements`, `new`, `this`, `super`, `abstract`, `final`, `static`|
-|예외 처리|`try`, `catch`, `finally`, `throw`, `throws`|
-|패키지/임포트|`package`, `import`|
-|예약어|`instanceof`, `enum`, `native`, `strictfp`, `transient`, `assert`|
-
-<br> 
-<br>
-<br>
-
-# **식(Expression)과 문장(Statement)**
----
-## **식**
-> 값을 생성하는 코드
-변수를 포함한 연산자, 메서드 호출 등을 의미
-항상 값으로 평가됨
-
-<br>
-
-## **문장**
-> 하나의 완전한 실행(명령)의 단위
-세미콜론(;)으로 끝남
-선언문, 실행문, 제어문 등이 포함됨
-
-|문장의 종류|설명|예시|
-|:---:|:---:|:---:|
-|선언문|변수선언|`int x;`|
-|대이비문|변수에 값 할당|`x = 10;`|
-|제어문|흐름 제어 `(if, for, while)`|`if (x > 0) {}`|
-|메서드 호출문|메서드 실행|`System.out.println(x);`|
-|반환문|메서드 결과 반환|`return x;`|
 
 # **자료형**
 ---
@@ -190,6 +125,8 @@ class, 인터페이스, 문자열은 이후의 글에서 더 알아보도록 하
 ---
 자바의 연산자는 **기능에 따라 6가지 유형**으로 나뉜다
 
+<br>
+
 ## **산술 연산자 (Arithmetic Operators)**
 > 숫자에 대한 기본적인 계산을 수행하는 연산자
 
@@ -271,7 +208,268 @@ class, 인터페이스, 문자열은 이후의 글에서 더 알아보도록 하
 ## **삼항 연산자 (Ternary Operator)**
 > **간단한 조건문 대체**
 
- `조건 ? 참일 때 값 : 거짓일 때 값`
+```java
+조건 ? 참일 때 값 : 거짓일 때 값;
+```
 
 
+<br>
+<br>
+<br>
+
+# **자바의 제어문**
+---
+
+**제어문이란?**
+
+> 자바에서 제어문`Control Statement`은 프로그램의 흐름을 제어하는 문장으로 조건문, 반복문, 분기문으로 나뉜다
+
+<br>
+
+**제어문의 종류**
+| 분류 | 종류 | 설명 |
+|:---:|:---:|:---:|
+| **조건문** | `if`, `if-else`, `switch` | 특정 조건에 따라 코드 실행 |
+| **반복문** | `for`, `while`, `do-while` | 특정 조건 동안 반복 실행 |
+| **분기문** | `break`, `continue`, `return` | 반복문 또는 메서드 실행 흐름 변경 |
+
+<br>
+<br>
+
+## **조건문(Conditional Statements)**  
+> 조건문은 **특정 조건을 만족할 때만 코드가 실행**되도록 한다
+
+**(1) if 문**
+• **조건이 `true`일 때 코드 블록 실행**
+• 중괄호 `{}` 없이 단일 문장 실행 가능 (비추천)
+
+```java
+if (조건식) {
+    // 실행될 코드
+}
+```
+
+```java
+int age = 20;
+if (age >= 18) {
+    System.out.println("성인입니다.");
+}
+```
+
+<br>
+
+**(2) if-else 문**
+• **조건이 `true`이면 `if` 블록 실행, `false`이면 `else` 블록 실행**
+
+```java
+if (조건식) {
+    // 참일 때 실행될 코드
+} else {
+    // 거짓일 때 실행될 코드
+}
+```
+
+```java
+int age = 16;
+if (age >= 18) {
+    System.out.println("성인입니다.");
+} else {
+    System.out.println("미성년자입니다.");
+}
+```
+
+<br>
+
+**(3) if-else if-else 문**
+• 여러 개의 조건을 검사할 때 사용
+• 위에서부터 차례대로 검사하며, 첫 번째 `true` 조건이 실행되면 나머지는 실행되지 않음
+
+```java
+if (조건1) {
+    // 조건1이 참일 때 실행
+} else if (조건2) {
+    // 조건2가 참일 때 실행
+} else {
+    // 모든 조건이 거짓일 때 실행
+}
+```
+
+```java
+int score = 85;
+
+if (score >= 90) {
+    System.out.println("A 학점");
+} else if (score >= 80) {
+    System.out.println("B 학점");
+} else if (score >= 70) {
+    System.out.println("C 학점");
+} else {
+    System.out.println("F 학점");
+}
+```
+
+<br>
+
+**(4) switch 문**
+• 여러 개의 조건을 비교할 때 사용 (`==` 비교만 가능)
+• `case` 값과 비교하여 일치하는 경우 실행  
+• `break`를 사용하여 실행 종료 (없으면 다음 `case`까지 실행됨)
+• `default`는 모든 `case`가 일치하지 않을 때 실행
+
+```java
+switch (변수) {
+    case 값1:
+        // 실행될 코드
+        break;
+    case 값2:
+        // 실행될 코드
+        break;
+    default:
+        // 위 조건에 해당하지 않을 경우 실행
+}
+```
+
+```java
+int day = 3;
+
+switch (day) {
+    case 1:
+        System.out.println("월요일");
+        break;
+    case 2:
+        System.out.println("화요일");
+        break;
+    case 3:
+        System.out.println("수요일");
+        break;
+    default:
+        System.out.println("기타 요일");
+}
+
+// 수요일 출력
+```
+
+---
+
+## **반복문(Loop Statements)**
+> 반복문은 특정 조건이 참인 동안 코드를 반복 실행한다
+
+**(1) for 문**
+• 반복 횟수가 정해진 경우 사용
+• `초기식 → 조건식 → 실행 → 증감식` 순서로 실행
+
+```java
+for (초기식; 조건식; 증감식) {
+    // 반복 실행될 코드
+}
+```
+
+```java
+for (int i = 1; i <= 5; i++) {
+    System.out.println("Hello, Java! " + i);
+}
+
+/*
+Hello, Java! 1
+Hello, Java! 2
+Hello, Java! 3
+Hello, Java! 4
+Hello, Java! 5
+*/
+```
+
+<br>
+
+**(2) while 문**
+•  **조건이 `true`인 동안 계속 반복**
+• 반복 횟수가 정해지지 않은 경우 사용
+
+```java
+while (조건식) {
+    // 반복 실행될 코드
+}
+```
+
+```java
+int i = 1;
+while (i <= 5) {
+    System.out.println("반복 횟수: " + i);
+    i++;
+}
+```
+
+<br>
+
+**(3) do-while 문**
+• `while`과 동일하지만, **최소 1번은 실행됨** (조건 검사 전에 실행)
+
+```java
+do {
+    // 최소 1회 실행될 코드
+} while (조건식);
+```
+
+```java
+int i = 1;
+do {
+    System.out.println("반복 횟수: " + i);
+    i++;
+} while (i <= 5);
+```
+
+<br>
+<br>
+
+## **분기문 (Break / Continue / Return)**
+> 분기문은 **제어문의 흐름을 변경**하는 역할을 한다
+
+**(1) break 문**
+• 반복문을 즉시 종료하고 빠져나옴
+• `switch` 문에서도 사용됨
+
+```java
+for (int i = 1; i <= 10; i++) {
+    if (i == 5) {
+        break;  // i가 5면 반복문 종료
+    }
+    System.out.println(i);
+}
+/*
+1
+2
+3
+4
+*/
+```
+
+<br> 
+
+**(2) continue 문**
+• 현재 반복을 건너뛰고 다음 반복으로 이동
+
+```java
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        continue;  // i가 3이면 건너뛰고 다음 반복 실행
+    }
+    System.out.println(i);
+}
+/*
+1
+2
+4
+5
+*/
+```
+<br>
+
+**(3) return 문**
+• 메서드를 즉시 종료하고 호출한 곳으로 돌아감
+• 반환값이 있는 경우 `return 값;` 사용
+
+```java
+public static int add(int a, int b) {
+    return a + b;  // 실행 후 결과 반환
+}
+```
 
