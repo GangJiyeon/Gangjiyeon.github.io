@@ -74,6 +74,8 @@ class Car {
 - 모든 객체가 **공유하는 변수** (한 번만 메모리에 저장됨)
 - **프로그램 실행 시 자동으로 메모리에 할당됨 (Method 영역에 저장됨)**
 
+> 
+
 ```java
 class Student {
     static int totalStudents = 0;  // 클래스 변수 (공유됨)
