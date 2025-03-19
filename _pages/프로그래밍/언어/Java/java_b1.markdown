@@ -13,7 +13,7 @@ thumbnail: "/assets/img/thumbnail/book.jpg"
 
 # **자바의 탄생과 발전**
 ---
-## ** 자바의 탄생 (1991년)**
+## **자바의 탄생 (1991년)**
 • **그린 프로젝트(Green Project)**에서 시작  
 • **Sun Microsystems**의 `제임스 고슬링(James Gosling)` 주도  
 • **가전제품용 소프트웨어 개발**을 목적으로 연구 시작  
@@ -88,11 +88,15 @@ thumbnail: "/assets/img/thumbnail/book.jpg"
 • 자바 표준 베포판(Standard Edition) 
 • 데스크탑과 서버 응용 개발 플랫폼
 
+<br>
+
 ## **Java ME**
 • 자바 마이크로 베포판 (Micro Edition)
 • 휴대전화나 PDA, 셋톱박스 등 성능/자원이 제한적인 하드웨어 응용 개발을 위한 플랫폼
 • 가장작은메모리필요
 • JavaSE의 일부 + 임베디드 시스템 및 가전제품을 위한 API 정의
+
+<br>
 
 ## **Java EE**
 • 자바 기업용 베포판 (Enterprise Edition)
@@ -108,15 +112,23 @@ thumbnail: "/assets/img/thumbnail/book.jpg"
 
 # **자바 개발 도구 (JDK, JRE, JVM)**  
 ---
+> `JVM < JRE < JDK` 의 포함관계를 가진다
+
+<br>
+
 ## **JDK (Java Development Kit) - 자바 개발 키트**
 • 자바 애플리케이션을 개발하고 실행할 수 있는 도구 모음  
 • JDK는 JRE와 추가적인 개발 도구(컴파일러, 디버거 등)를 포함  
 • 자바 코드를 작성하고 실행하려면 반드시 JDK가 필요  
 
+<br>
+
 ## **JRE (Java Runtime Environment) - 자바 실행 환경**
 • 자바 프로그램을 실행하기 위한 환경  
 • JVM과 자바 API(라이브러리)를 포함  
 • 개발자가 아닌 일반 사용자는 JRE만 설치하면 자바 프로그램 실행 가능  
+
+<br>
 
 ## **JVM (Java Virtual Machine) - 자바 가상 머신**
 • 자바 바이트코드를 실행하는 소프트웨어  
@@ -126,7 +138,7 @@ thumbnail: "/assets/img/thumbnail/book.jpg"
 <br>
 
 
-> 요약 하자면 `JVM < JRE < JDK` 의 포함관계를 가진다
+
 
 <br>
 <br>
