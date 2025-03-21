@@ -1,18 +1,17 @@
 ---
-title: "[Java객체지향] 클래스와 객체, 메서드와 패키지, 접근제어자"
+title: "[Java객체지향] 클래스와 객체, 인스턴스, 메서드와 패키지, 접근제어자"
 tags:
     - Java객체지향
 date: "2025-03-13"
 thumbnail: "/assets/img/thumbnail/book.jpg"
 ---
-# **자바 클래스**
+# **자바 클래스와 객체, 인스턴스**
 
 
 <br>
 <br>
 <br>
 
-# **자바 객체**
 
 
 <br>
