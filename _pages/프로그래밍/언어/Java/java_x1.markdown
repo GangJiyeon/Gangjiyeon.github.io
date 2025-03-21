@@ -1,5 +1,5 @@
 ---
-title: "[Java객체지향] 추상화"
+title: "[Java심화] 예외처리"
 tags:
     - Java객체지향
 date: "2025-03-18"

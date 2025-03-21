@@ -1,5 +1,5 @@
 ---
-title: "[Java객체지향] 다형성"
+title: "[Java객체지향] 추상클래스"
 tags:
     - Java객체지향
 date: "2025-03-17"
