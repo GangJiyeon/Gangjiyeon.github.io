@@ -50,3 +50,7 @@ defaults:
 kramdown:
   input: GFM
   hard_wrap: true
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
