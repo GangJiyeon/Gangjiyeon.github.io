@@ -13,9 +13,17 @@ main:
 
 
 sidebar-category:
-- title: "category"
+- title: "develop"
   children:
-    - title: "develop"
-      url: "/develop"
-    - title: "daily"
-      url:  "/daily"
+    - title: "language"
+      url: /language
+    - title: "cs"
+      url:  /cs
+    - title: "ds_ai"
+      url: /ds_ai
+- title: "daily"
+  children:
+    - title: "Australia"
+      url: /australia
+    - title: "diary"
+      url:  /diary
