@@ -3,6 +3,9 @@
     <head>
         {% include head.html %}
         <link rel="stylesheet" href="{{ '/assets/css/404.css' | prepend: site.baseurl }}">
+        {% if page.use_math %}
+            {% include mathjax_support.html %}
+        {% endif %}
     </head>
     <body>
         <div class="blank-page">
