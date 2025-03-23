@@ -1,9 +1,9 @@
 ---
-title: "blog"
+title: "develop"
 layout: archive
-permalink: /blog
+permalink: /develop
 ---
 
 
-{% assign posts = site.categories.blog %}
+{% assign posts = site.categories.develop %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
