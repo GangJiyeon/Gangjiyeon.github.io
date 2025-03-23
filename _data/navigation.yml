@@ -13,18 +13,3 @@ main:
 
 
 
-sidebar-category:
-  - title: "🌱 develop"
-    children:
-      - title: "language"
-        url: "/categories/language"
-      - title: "cs"
-        url:  "/categories/cs"
-      - title: "ds&ai"
-        url:  "/categories/ds_ai"
-  - title: "🌱 daily"
-    children:
-      - title: "daily"
-        url: "/categories/daily"
-      - title: "australia"
-        url:  "/categories/australia"
