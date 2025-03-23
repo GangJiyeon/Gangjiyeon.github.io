@@ -1,6 +1,6 @@
 ---
 title: "ds&ai"
-layout: archive
+layout: splash
 permalink: categories/ds_ai
 author_profile: true
 types: posts

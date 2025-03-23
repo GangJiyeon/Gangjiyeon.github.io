@@ -1,6 +1,6 @@
 ---
 title: "language"
-layout: archive
+layout: splash
 permalink: categories/language
 author_profile: true
 types: posts
