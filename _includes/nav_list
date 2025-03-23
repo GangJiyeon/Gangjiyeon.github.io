@@ -8,7 +8,7 @@
       Category ({{sum}})
     </li>
     <li>
-      <span class="nav__sub-title">develop</span>
+      <span class="nav__sub-title">🌱 develop</span>
       <ul>
         {% for category in site.categories %}
                     {% if category[0] == "language" %}
@@ -30,7 +30,7 @@
             {% endif %}
         {% endfor %}
       </ul>
-      <span class="nav__sub-title">daily</span>
+      <span class="nav__sub-title">🌱 daily</span>
       <ul>
         {% for category in site.categories %}
                     {% if category[0] == "daily" %}

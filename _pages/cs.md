@@ -1,6 +1,6 @@
 ---
 title: "cs"
-layout: splash
+layout: liquid
 permalink: categories/cs
 author_profile: true
 types: posts
