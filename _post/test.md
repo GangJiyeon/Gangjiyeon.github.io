@@ -3,7 +3,7 @@ title: "test"
 excerpt: "test"
 
 categories: 
-  - daily
+  - Blog
 tags: [daily]
 toc: true
 author_profile: true 
@@ -12,3 +12,5 @@ sidebar:
 ---
 
 # test
+
+왜 안되는 거니
