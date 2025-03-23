@@ -1,37 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        {% include head.html %}
-        <link rel="stylesheet" href="{{ '/assets/css/404.css' | prepend: site.baseurl }}">
-        {% if page.use_math %}
-            {% include mathjax_support.html %}
-        {% endif %}
-    </head>
-    <body>
-        <div class="blank-page">
-        <a href="{{ '/' | prepend: site.baseurl }}" class="go-home">↩️ GO HOME</a>
-        <div class="not-found-msg">
-            <h1 class="sour-face">`Φ ⌒ `Φ ?</h1>
-            <p style="font-size:1.75rem; color:#fa4251;">404: Page not found</p>
-            <p style="font-size:1rem;">D-Data breach...? &nbsp&nbsp No such thing allowed!</p>
-        </div>
-        </div>
-    </body>
-    <script src="{{ '/assets/js/404.js' | prepend: site.baseurl }}"></script>
-    <script type="text/javascript" async
-	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
-</script>
+---
+---
 
-<script type="text/x-mathjax-config">
-	MathJax.Hub.Config({
-	extensions: ["tex2jax.js"],
-	jax: ["input/TeX", "output/HTML-CSS"],
-	tex2jax: {
-		inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-		displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-		processEscapes: true
-	},
-	"HTML-CSS": { availableFonts: ["TeX"] }
-});
-</script>
+<!doctype html>
+{% include copyright.html %}
+<html lang="{{ site.locale | replace: "_", "-" | default: "en" }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
+
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+    {% include_cached skip-links.html %}
+    {% include_cached masthead.html %}
+
+    <div class="initial-content">
+      {{ content }}
+      {% include after-content.html %}
+    </div>
+
+    {% if site.search == true %}
+      <div class="search-content">
+        {% include_cached search/search_form.html %}
+      </div>
+    {% endif %}
+
+    <div id="footer" class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include_cached footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+  </body>
 </html>
