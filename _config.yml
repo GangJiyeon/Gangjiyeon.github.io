@@ -114,7 +114,7 @@ analytics:
 # Site Author
 author:
   name             : "강지연"
-  avatar           : /assets/img/me.png"
+  avatar           : https://gangjiyeon.github.io/assets/img/me.png"
   bio              : "I am an **amazing** person."
   location         : "Gimhae, Korea"
   email            :
