@@ -1,7 +1,14 @@
 ---
-title:  "사이드바(SideBar) 카테고리 만들기"
-categories:
+title: "test"
+excerpt: "test"
+
+categories: 
   - daily
+tags: [daily]
+toc: true
+author_profile: true 
+sidebar:
+   nav: "docs"
 ---
 
-안녕
+# test
