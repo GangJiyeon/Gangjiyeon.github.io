@@ -1,9 +1,9 @@
 # main links
 main:
   - title: "Home"
-    url: https://https://gangjiyeon.github.io/
+    url: https://gangjiyeon.github.io/
   - title: "Portfolio"
-    url: https://https://gangjiyeon.github.io/me.portfolio
+    url: https://gangjiyeon.github.io/me.portfolio
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
@@ -11,3 +11,20 @@ main:
   # - title: "Sitemap"
   #   url: /sitemap/
 
+
+
+sidebar-category:
+  - title: "🌱 develop"
+    children:
+      - title: "language"
+        url: "/categories/language"
+      - title: "cs"
+        url:  "/categories/cs"
+      - title: "ds&ai"
+        url:  "/categories/ds_ai"
+  - title: "🌱 daily"
+    children:
+      - title: "daily"
+        url: "/categories/daily"
+      - title: "australia"
+        url:  "/categories/australia"
