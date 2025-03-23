@@ -3,7 +3,6 @@ title: "[알고리즘] 차수"
 tags:
 date: "2025-03-21"
 thumbnail: "/assets/img/thumbnail/mun.jpg"
-use_math: true
 ---
 
 ☑ 개요 (Overview)
