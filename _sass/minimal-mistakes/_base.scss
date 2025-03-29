@@ -107,7 +107,7 @@ abbr[data-original-title] {
 /* blockquotes */
 
 blockquote {
-  margin: 0;
+  margin: 0 0 10px 0;
   padding-inline: 1em;
   border-inline-start: 3px solid $primary-color;
   background-color: #f5f5f5;
@@ -152,12 +152,19 @@ button:focus {
 
 /* code */
 
+@font-face {
+  font-family: 'goorm-sans-code';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-code.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 tt,
 code,
 kbd,
 samp,
 pre {
-  font-family: $monospace;
+  font-family: 'goorm-sans-code';
 }
 
 pre {
