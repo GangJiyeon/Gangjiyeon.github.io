@@ -11,14 +11,45 @@ sidebar:
 ---
 
 
-# **키워드와 예약어**
----
+# 식별자, 키워드, 예약어
+## 식별자(identifier)
 
-자바에서 `키워드(Keyword)`와 `예약어(Reserved Word)`는 종종 같은 의미로 사용되는데, 엄밀히 따지면 약간 차이가 있다
+**[ 식별자란? ]**
+> 클래스, 변수, 상수, 메소드 등에 붙이는 이름
+
+`원칙`<br>
+• 불가능: 특수문자(`@`, `#`, `!` 등), 공백, 탭, 예약어(키워드), 논리리터럴(`null`, `true`), 널리터럴(`false`)<br>
+• 가능: 한글, 유니코드(2byte)<br>
+• 첫문자에 : 숫자불가능, 일부 기호(`_`, `$`) 가능하지만 잘 안씀
+• 길이제한 없음<br>
+• 대소문자 구별
+
+`예시`
+
+```java
+//가능
+int name;
+char student_ID; // '_' 사용 가능
+void $func() { } // '$' 사용 가능
+class Monster3 { } // 숫자 사용 가능
+int Java공부하기가가점점어려워짐; // 길이 제한 없음
+int barChart; int barchart; // 대소문자 구분. barChart와 barchart는 다름
+int 가격; // 한글 이름 사용 가능
+
+//불가능
+int 3Chapter; class if { } char false; void null() { } class %calc { } // 식별자의 첫문자로 숫자 사용 불가
+// 자바의 예약어 if 사용 불가
+// false 사용 불가
+// null 사용 불가
+// '%'는 특수문자
+```
+
+## 키워드와 예약어
+> 자바에서 `키워드(Keyword)`와 `예약어(Reserved Word)`는 종종 같은 의미로 사용되는데, 엄밀히 따지면 약간 차이가 있다
 
 <br>
 
-## **키워드 VS 예약어**
+**[ 키워드 vs 예약어 ]**<br>
 
 |비교|키워드|예약어|
 |:---:|:---:|:---:|
@@ -32,8 +63,7 @@ sidebar:
 
 <br>
 
-
-## **키워드(예약어)의 종류**
+**[ 키워드(예약어)의 종류 ]**
 
 |구분|키워드(예약어)|
 |:---:|:---:|
@@ -45,39 +75,22 @@ sidebar:
 |패키지/임포트|`package`, `import`|
 |예약어|`instanceof`, `enum`, `native`, `strictfp`, `transient`, `assert`|
 
-<br> 
-<br>
-<br>
-
-# **식별자(identifier)**
-
-**식별자란?**
-> 클래스, 변수, 상수, 메소드 등에 붙이는 이름
-
-원칙
-불가능: 특수문자(`@`, `#`, `!` 등), 공백, 탭, 예약어(키워드), 논리리터럴(`null`, `true`), 널리터럴(`false`)
-가능: 한글, 유니코드(2byte), 
-첫문자에 : 숫자불가능, 일부 기호(`_`, `$`) 가능하지만 잘 안씀
-길이제한 없음
-대소문자 구별
 
 
 <br> 
 <br>
 <br>
 
-# **식(Expression)과 문장(Statement)**
----
-## **식**
+# **식(Expression)과 문장(Statement), 주석처리하기**
+## **식과 문장**
+**[ 식 ]**<br>
 > • 값을 생성하는 코드
-• 변수를 포함한 연산자, 메서드 호출 등을 의미
+• 변수를 포함한 연산자, 메서드 호출 등을 의미<br>
 • 항상 값으로 평가됨
 
-<br>
-
-## **문장**
-> • 하나의 완전한 실행(명령)의 단위
-• 세미콜론(;)으로 끝남
+**[ 문장 ]**
+> • 하나의 완전한 실행(명령)의 단위<br>
+• 세미콜론(;)으로 끝남<br>
 • 선언문, 실행문, 제어문 등이 포함됨
 
 |문장의 종류|설명|예시|
@@ -89,11 +102,8 @@ sidebar:
 |반환문|메서드 결과 반환|`return x;`|
 
 <br>
-<br>
-<br>
 
-# **자바 주석처리**
----
+## 자바 주석처리
 **[ 한 줄 주석 ]**
 
 ```java
@@ -115,11 +125,10 @@ sidebar:
 <br>
 <br>
 
-# **자료형, 형변환** 
----
+# 자료형, 형변환
+## 자료형
 
-## **자료형이란?**
-
+**[ 정의 ]**
 > `자료형(Data Type)`은 `변수에 저장할 수 있는 값의 종류`를 정의하며, 크게 **기본 자료형(Primitive Type)**과 **참조 자료형(Reference Type)**으로 나뉜다
 
 |구분|기본자료형|참조자료형|
@@ -131,7 +140,8 @@ sidebar:
 
 <br>
 
-## **기본자료형**
+**[ 종류 ]**
+`기본자료형(Primitive Data type)`
 > 자바에서 직접 값을 저장하는 데이터 타입
 
 |자료형 구분|종류|
@@ -139,11 +149,12 @@ sidebar:
 |정수형|`byte`: 1byte, default 0, -128 ~ 127 <br>`short`: 2byte, default 0, -32,768 ~ 32,767 <br> `int`: 4byte, default 0, -2,147,483,648 ~ 2,147,483,647 <br>`long`: 8byte, default 0L, -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807|
 |실수형|`float`: 4byte, default 0.0f, 32비트 부동소수점 (소수점 이하 약 7자리 정밀도) <br>`double`: 8byte, default 0.0d, 64비트 부동소수점 (소수점 이하 약 15자리 정밀도)|
 |문자형|`char`: 2byte, default \u0000, 유니코드 문자 (0~65535)|
-|불리언형|`boolean`: 1byte, default false, true, false|
+|불리언형|`boolean`: 1byte, default false, `true`, `false`, 숫자가 아님|
 
 <br>
 
-## **참조자료형**
+
+`참조자료형(Reference Data type)`
 > 객체의 주소값을 저장하는 타입
 
 (1) 배열 (array): 같은 타입의 데이터를 연속적(메모리상 연속된 공간에)으로 저장하는 자료구조
@@ -227,52 +238,106 @@ String message = "Hello, Java!";
 class, 인터페이스, 문자열은 이후의 글에서 더 알아보도록 하자
 
 
-+ 나열형
+
+
+## **리터럴과 상수**
+**[ Literal(리터럴) ]**
+> value representation (값 자체의 표현)
+
+```java
+int: 2, 0xA, 0b0110 // 0x 16진수, 0b 이진수
+long: 2L
+float: 3.14f
+double: 2.0, 2.0E4 // = 2.0´104 = 20,000.0
+char: ‘K’, ‘\n’, ‘\t’ // escape characters, \u000a \u0009
+boolean: true, false
+String : "Man is mortal" // 글자를모아만든객체 , !=배열
+```
+
+**[ 상수 ]**
+`선언`
+> final 키워드 사용
+• 변수 선언 시 초기값을 지정한다
+• 실행 중 값 변경 불가
+
+`상수 선언 사례`
+
+```java
+final int LENGTH = 20;
+static final double PI = 3.141592; // 변치 않는 수, static으로 선언하자
+```
+
+
+
+## **var 예약어, enum**
+
+**[ var 예약어 ]**
+
+
+**[ enum(나열형) ]**
+유한한 종류/가짓수의, 일종의 상수형 자료를 새로이 정
+의한다
+– 식별자/identifier 처럼 보이기도 하고
+– String (문자열)처럼 출력되기도 하지만
+– 내부적으로 정수로 취급된다
+• Defined at two levels -> examples!
+1. class × interface level에서 정의– global?
+2. 변수/method 수준의 정의– member?
+
+
+```java
+enum Week {월, 화, 수, 목, 금, 토} // class level, no ‘;’
+public class TestEnum {
+enum RGB { red, green, blue } // class-internal
+int year;
+public static void main(-) {
+Week today = Week.월;
+RGB color = RGB.red;
+System.out.println(“오늘은 ” + today + “요일”);
+System.out.println(“단풍잎 색은 “ + color);
+}
+}
+```
+
+
+## **형변환**
+**[ 형변환 ]**
+> 한 자료형의 값을 다른 형의 값으로 변환
+
+`자동형변환`
+컴파일러에 의해 원래의 자료형보다 큰 형식으로 자동 변환
+– 치환문(=)이나 수식 내에서 형이 일치하지 않을 때
+
+`강제형변환`
+개발자의 의도적 형변환
+– ‘(자료형)’ 형식으로 명시적으로 형변환을 지정한다
+– 강제 변환은 값 손실 가능
+
+
 <br>
 <br>
 <br>
 
-# **자바 변수 + 상수**
+# **자바 변수의 유효범위**
 ---
 
-자바에서 변수는 크게 `데이터 타입에 따른 구분`과 `선언 위치에 따른 구분`으로 2가지 기준에 따라 분류된다
+> 자바의 변수는 선언된 위치에 따라 종류가 나뉘고, 이에 따라 유효범위(scope)도 결정됨(즉, 선언위치에 따라 = 유효범위에 따라)
 
-> 데이터 타입에 따라: 기본형 변수, 참조형 변수
-선언 위치에 따른 구분: 멤버변수(인스턴스변수, 클래스변수), 지역변수, 매개변수
+`참고` 데이터 타입에 따라: 기본형 변수, 참조형 변수
 
-<br>
 
-## **1. 기본형 변수 (Primitive Variable)**
-- `int, double, char, boolean` 같은 기본 데이터 타입을 저장하는 변수
-- **값 자체를 저장**하며, 크기가 고정됨 (4바이트, 8바이트 등)
-- 스택(Stack) 메모리에 저장됨
+| 변수 종류|설명 |
+|:---:|---|
+| **Class Variables**         | **클래스 변수** – `static` 변수로, 클래스 전체에서 공유|
+| **Instance Variables**      | **인스턴스 변수** – 각 객체마다 개별적으로 존재하는 변수|
+| **Local Variables**         | **지역 변수** – 메서드나 블록 내에서 선언되어 그 범위 안에서만 유효한 변수|
+| **Array Elements**          | **배열 요소** – 배열의 각 인덱스에 저장된 값|
+| **Method Arguments**        | **메서드 인자** – 메서드 호출 시 전달되는 값|
+| **Constructor Arguments**   | **생성자 인자** – 생성자 호출 시 전달되는 값|
+| **Exception Handler Arguments** | **예외 처리 인자** – 예외 처리 블록(`catch`)에서 전달받는 예외 객체입니다. |
 
-```java
-int num = 10;  // 기본형 변수
-double pi = 3.14;
-boolean isTrue = true;
-```
+`멤버변수`class variables + instance variables
 
-<br>
-
-## **2. 참조 변수 (Reference Variable)**
-- 객체의 **메모리 주소를 저장하는 변수**
-- 기본형 변수가 아닌 모든 변수 (`String`, 배열, 클래스 등)
-- 힙(Heap) 메모리에 저장된 객체를 가리킴
-
-```java
-String name = "Java";  // 참조 변수 (name은 "Java"의 주소를 저장)
-int[] numbers = {1, 2, 3};  // 배열도 참조 변수
-Person p = new Person();  // 객체도 참조 변수
-```
-
-> `null`을 저장할 수도 있음 (주소가 없음)
-
-```java
-Person p = null;  // 참조 변수, 현재 어떤 객체도 가리키지 않음
-```
-
-<br>
 
 ## **3. 멤버 변수 (Member Variable)**
 - 클래스 내부에서 선언된 변수
@@ -513,6 +578,25 @@ void greet(String name) {  // 매개변수 name
 조건 ? 참일 때 값 : 거짓일 때 값;
 ```
 
+
+<br>
+
+## **연산자 우선순위(Operator Precedence)
+
+|Prec.|Operators|Associativity|
+|1|`++`, `--`, `+`, `-`, `!`, `(cast)`|R > L|
+|2|`*`, `/`, `%`|L > R|
+|3|`+`, `-`|L > R|
+|4|`<<`, `>>`, `>>>`|L > R|
+|5|`<`, `>`, `<=`, `>=`< `instance of`|L > R|
+|6|`==`, `!=`|L > R|
+|7|`&`|L > R|
+|8|`^`|L > R|
+|9|`|`|L > R||
+|10|`&&`|L > R|
+|11|`||`|L > R|
+|12|`?:`|R > L|
+|13|`=`,`*=`, `+=`, `-=`, `<<=`, ...|R > L|
 
 <br>
 <br>
