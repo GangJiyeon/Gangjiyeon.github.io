@@ -63,8 +63,7 @@ sidebar:
 **[ 바이트코드 (Bytecode) ]**<br>
 •  자바 소스를 **컴파일하여 생성된 목적 코드**  <br>
 •  특정 CPU에 종속되지 않은 중립적인 코드<br>
-•  **JVM(Java Virtual Machine)에 의해 해석되고 실행됨**  
-
+•  **JVM(Java Virtual Machine)에 의해 해석되고 실행됨**  <br>
 **[ 자바 가상 머신 (JVM - Java Virtual Machine) ]**<br>
 •  **바이트코드를 실행하는 가상 기계(소프트웨어)**  <br>
 •  운영체제(OS)와 독립적으로 동작  <br>
@@ -81,15 +80,17 @@ sidebar:
 ---
 > 오라클은 개발 환경에 따라 다양한 자바 베포판 제공
 
-## **[ Java SE ]**<br>
+**[ Java SE ]**<br>
 • 자바 표준 베포판(Standard Edition) <br>
 • 데스크탑과 서버 응용 개발 플랫폼
-## **[ Java ME ]**<br>
+
+**[ Java ME ]**<br>
 • 자바 마이크로 베포판 (Micro Edition)<br>
 • 휴대전화나 PDA, 셋톱박스 등 성능/자원이 제한적인 하드웨어 응용 개발을 위한 플랫폼<br>
 • 가장작은메모리필요<br>
 • JavaSE의 일부 + 임베디드 시스템 및 가전제품을 위한 API 정의
-## **[ Java EE ]**<br>
+
+**[ Java EE ]**<br>
 • 자바 기업용 베포판 (Enterprise Edition)<br>
 • 자바를 이용한 다중 사용자, 기업용 응용 개발을 위한 플랫폼 <br>
 • JavaSE + 인터넷 기반의 서버 사이드 컴퓨팅관련 API 추가
