@@ -708,6 +708,8 @@ class ILoveJava{
 
 # **자바의 연산자(Operators)**
 ---
+
+## 연산자의 종류
 자바의 연산자는 **기능에 따라 6가지 유형**으로 나뉜다
 > `참고` 피연산자의 개수에 따라 구분하기도 함<br>
 • unary operators (단항-): `-1`, `++a`, `n--`<br>
@@ -717,7 +719,7 @@ class ILoveJava{
 
 <br>
 
-## **산술 연산자 (Arithmetic Operators)**
+**[ 산술 연산자 (Arithmetic Operators) ]**
 > 숫자에 대한 기본적인 계산을 수행하는 연산자
 
 |연산자|설명|예제|결과|
@@ -730,7 +732,7 @@ class ILoveJava{
 
 <br>
 
-## **대입 연산자 (Assignment Operators)**
+**[ 대입 연산자 (Assignment Operators) ]**
 > 변수에 값을 저장할 때 사용되는 연산자
 
 |연산자|설명|예제|결과|
@@ -745,7 +747,7 @@ class ILoveJava{
 
 <br>
 
-## **비교 연산자 (Comparison Operators)**
+**[ 비교 연산자 (Comparison Operators) ]**<br>
 > 두 값을 비교하고 boolean 값(`true` 또는 `false`)을 반환
 
 |연산자|설명|예제|결과|
@@ -759,7 +761,7 @@ class ILoveJava{
 
 <br>
 
-## **논리 연산자 (Logical Operators)**
+**[ 논리 연산자 (Logical Operators) ]**<br>
 > 조건문에서 주로 사용되며, **true 또는 false 값을 반환**
 
 |연산자|설명|예제|결과|
@@ -770,7 +772,7 @@ class ILoveJava{
 
 <br>
 
-## **비트 연산자 (Bitwise Operators)**
+**[ 비트 연산자 (Bitwise Operators) ]**<br>
 > **2진수 비트 단위**로 연산을 수행하는 연산자
 
 |연산자|설명|예제(`a=5`, `b=3`)|결과|
@@ -784,7 +786,7 @@ class ILoveJava{
 
 <br>
 
-## **증감 연산자 (Increment & Decrement)**
+**[ 증감 연산자 (Increment & Decrement) ]**<br>
 > **변수의 값을 1 증가 또는 감소시키는 연산자**
 
 |연산자|설명|예제|결과|
@@ -795,7 +797,7 @@ class ILoveJava{
 
 <br>
 
-## **삼항 연산자 (Ternary Operator)**
+**[ 삼항 연산자 (Ternary Operator) ]**<br>
 > **간단한 조건문 대체**
 
 ```java
@@ -805,7 +807,7 @@ class ILoveJava{
 
 <br>
 
-## **연산자 우선순위(Operator Precedence)
+## 연산자 우선순위(Operator Precedence)
 
 |Prec.|Operators|Associativity|
 |1|`++`, `--`, `+`, `-`, `!`, `(cast)`|R > L|
