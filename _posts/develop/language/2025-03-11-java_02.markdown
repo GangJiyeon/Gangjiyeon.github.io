@@ -4,6 +4,7 @@ excerpt: " 식과문장, 키워드와 예약어, 주석, 변수와 자료형, �
 categories:
   - language
 tags: [자바기초, Java]
+use_math: true
 toc: true
 author_profile: true 
 sidebar:
@@ -20,7 +21,7 @@ sidebar:
 **[ 원칙 ]**<br>
 • 불가능: 특수문자(`@`, `#`, `!` 등), 공백, 탭, 예약어(키워드), 논리리터럴(`null`, `true`), 널리터럴(`false`)<br>
 • 가능: 한글, 유니코드(2byte)<br>
-• 첫문자에 : 숫자불가능, 일부 기호(`_`, `$`) 가능하지만 잘 안씀
+• 첫문자에 : 숫자불가능, 일부 기호(`_`, `$`) 가능하지만 잘 안씀<br>₩
 • 길이제한 없음<br>
 • 대소문자 구별
 
@@ -68,14 +69,17 @@ class %calc { } // '%'는 특수문자
 
 |구분|키워드(예약어)|
 |:---:|:---:|
-|자료형|`byte`, `short`, `int`, `long`,`float`, `double`, `char`, `boolean`|
+|자료형|`byte`, `short`, `int`, `long`,`float`, `double`, `char`, `boolean`, `void`|
 |제어문|`if`, `else`, `switch`, `case`, `default`, `while`, `do`, `for`, `break`, `continue`, `return`|
 |접근제어자|`publice`, `private`, `protected`, `default(예약어X)`|
-|클래스 및 객체|`class`, `interface`, `extends`, `implements`, `new`, `this`, `super`, `abstract`, `final`, `static`|
+|클래스 및 객체|`class`, `interface`, `extends`, `implements`, `new`, `this`, `super`, `abstract`, `final`, `static`, `synchronized	`, `this`, `volatile`|
 |예외 처리|`try`, `catch`, `finally`, `throw`, `throws`|
 |패키지/임포트|`package`, `import`|
 |예약어|`instanceof`, `enum`, `native`, `strictfp`, `transient`, `assert`|
+|리터럴(예약어X_|`true`, `false`,`null`|
+|사용X|`const`, `goto`|
 
+`리터럴` 예약어는 아니지만 예약어처럼 동작한다
 
 
 <br> 
@@ -144,28 +148,29 @@ class %calc { } // '%'는 특수문자
 > 자바에서 직접 값을 저장하는 데이터 타입
 
 |자료형 구분|종류|
-|:---:|:---:|
+|:---:|---|
 |정수형(integer)|`byte`: 1byte, default 0, -128 ~ 127 ($-2^7 ~ 2^7 -1$)<br>`short`: 2byte, default 0, -32,768 ~ 32,767 ($-2^15 ~ 2^15 -1$<br> `int`: 4byte, default 0, -2^31 ~ 2^31 - 1 <br>`long`: 8byte, default 0L, -2^64 ~ 2^63 - 1|
 |실수형(real)|`float`: 4byte, default 0.0f, NaN<br>`double`: 8byte, default 0.0d, 배정밀도(유효숫자의 개수가 두배), 기본타입, NaN|
 |문자형|`char`: 2byte, default \u0000, 아스키 or 16비트 유니코드 문자 (0~65535)|
 |불리언형|`boolean`: 1byte, default false, `true`, `false`, 숫자가 아님|
 
-NaN: not a number, 계산 불가능한 결과를 나타낼 때 사용
-`숫자형(number)`: 정수형 + 실수형
-`논리형(boolean type, 부울형)`
-숫자가 아님, 두가지 가능한 값(literal)만 있음 > true, false
+• NaN: not a number, 계산 불가능한 결과를 나타낼 때 사용<br>
+• 숫자가 아님, 두가지 가능한 값(literal)만 있음 > true, false<br>
+• `숫자형(number)`: 정수형 + 실수형<br>
+• `논리형(boolean type, 부울형)`
+
 
 <br>
 
 
 **2) 참조자료형(Reference Data type)**
-> 객체의 주소값을 저장하는 타입
-• 포인터 없이 객체의 참조(references:= 객체 데이터를 가리키는 자료형) 사용
-• similar to pointers
-• 프로그래머가 주소계산(+, -)을 직접할 수는 없음
+> 객체의 주소값을 저장하는 타입<br>
+• 포인터 없이 객체의 참조(references:= 객체 데이터를 가리키는 자료형) 사용<br>
+• similar to pointers<br>
+• 프로그래머가 주소계산(+, -)을 직접할 수는 없음<br>
 • 종류: 클래스, 배열, 인터페이스
 
-(1) 배열 (array): 같은 타입의 데이터를 연속적(메모리상 연속된 공간에)으로 저장하는 자료구조<br>
+**(1) 배열 (array)**: 같은 타입의 데이터를 연속적(메모리상 연속된 공간에)으로 저장하는 자료구조<br>
 • 한 번 크기를 정하면 변경할 수 없음<br>
 • 기본형의 배열에는 각 칸에 값/숫자가, 참조형의 배열에는 참조가 들어있음<br>
 • 배열 사용하기
@@ -195,6 +200,43 @@ numbers3[1] = 200;
 numbers3[2] = 300;
 ```
 
+```java
+// 객체 배열
+Car theCars[] = new Car[3];
+String names[] = new String[40];
+
+names[0] = "애마";
+System.out.print (names[0] +”!”);
+
+names[1] = "애첩";
+names[2] = "애기";
+
+theCars[1] = new Car(“골프”);
+theCars[0] = new Car(“프라이드”);
+theCars[1].info();
+theCars[0].info();
+```
+
+```java
+public class ArrayWork {
+    public static void main(String[] a) {
+        new ArrayWork();
+    }
+    ArrayWork() {
+        String names[] = {"애마", "애첩", "애기"};
+        Car theCars[] = new Car[3]; // 배열객체 생성
+
+        theCars[0] = new Car("프라이드");
+        theCars[1] = new Car("골프");
+        theCars[2] = new Car("미니");
+        theCars[0].모델 = names[0]; // 애칭을 변경
+
+        for(int i = 0; i < theCars.length; i++) 
+            theCars[i].move();
+    }
+}
+```
+
 • 2차원 배열 사용하기
 
 ```java
@@ -216,7 +258,18 @@ matrix[0][0] = 10;  // 첫 번째 행, 첫 번째 열 값 변경
 • 3차원 배열 사용하기
 
 ```java
-String threeArray[][][];
+int twoArray[][];
+String threeArray[][][];            // 배열 객체 만들어짐, 크기는 모름
+
+• twoArray = new int[5][8];
+• twoArray = new int[5][];  
+• threeArray = new String[3][][];   // 세 학년 (크기 결정)
+threeArray[0] = new String[10][];   // 1학년은 10개 반
+threeArray[0][0] = new String[40];  // 1학년1학급은 40명
+
+threeArray[0][0][0] = “홍길동”;
+threeArray[0][0][1] = “이순신”;
+threeArray[1] = new String[9][]; // 2학년은 9개 반
 ````
 
 <br>
@@ -228,21 +281,24 @@ String threeArray[][][];
 • 프로그램 실행: 클래스 정의에 따라 객체를 생성하고, 서로 메시지를 주고받는 것 (‘메서드 호출’)
 
 ```java
-class Car {     //1. 클래스 정의
+class Car {     //1. 클래스 정의: 새로운 참조 자료형의 선언
     String name;
 } 
 
-Car mycar;      //2. 자료형의 변수 선언(어딘가)
+Car mycar;      //2. 자료형의 변수 선언(어딘가) <-> C언어에서는 선언 + 객체생성
 
-mycar = new Car();  // 3. 객체 생성
+mycar = new Car();  // 3. 객체 생성 - in java
 
-mycar.name = "붕붕이";  // 4. 문자열(객체) 생성 및 할당, 컴파일 시 문자열 객체 생성
-````
+mycar.name = "붕붕이";  // 4. 문자열 객체(!=객체) 생성 및 할당
+// 컴파일 시 문자열 객체 생성
+// 객체 생성 및 배정(assignment)
+// name = Car 유형 객체의 멤버 변수
+```
 
 <br>
 
-(3) 인터페이스(interface): 다형성을 구현하기 위해 사용하는 참조형 타입
-> 이름 정도만 있고 구체적인 내용/정의가 없는 클래스
+(3) 인터페이스(interface): 다형성을 구현하기 위해 사용하는 참조형 타입<br>
+> 이름 정도만 있고 구체적인 내용/정의가 없는 클래스<br>
 • 여러 클래스의 공통된 기능/인터페이스를 표준화하는 방법(~요구 스펙)
 
 
@@ -250,21 +306,41 @@ mycar.name = "붕붕이";  // 4. 문자열(객체) 생성 및 할당, 컴파일 
 public interface Runnable {
     void run();
 }
+
+public interface Serializable { }
+public interface Comparable { }
+
+public class Thread implements Runnable {
+    Thread() { }
+    void start() { }
+    static void sleep(long ms) { }
+    void run() { }
+    ...
+}
 ```
 
 <br>
 
 
-(4) 문자열(string)
-> 기본 자료형X, 문자의배열X, 문자들의 집합, `String` 클래스의 객체로 취급됨
+(4) 문자열(string)<br>
+> 기본 자료형X, 문자의배열X, 문자들의 집합, `String` 클래스의 객체로 취급됨<br>
 • String 클래스로 문자열 표현, 즉 문자열을 표현하는 클래스 <br>
 • 문자열 리터럴: "안녕"<br>
 • 내용 변경X: 자르고 늘일 수 없고, 필요하면 새로운 객체로 만들어야 함<br>
-• 연산: `+` 연산자 = 스트링 접합/연결 -> 새 객체를 생성
-• 비교: `==`(참조변수의 값, 같은 객체인가, 같은 메모리 주소), `.equals()` (두 객체의 내용이 같은가, 메모리 주소는 달라도 됨)
+• 연산: `+` 연산자 = 스트링 접합/연결 -> 새 객체를 생성<br>
+• 비교: <br>
+👉 `==`(참조변수의 값, 같은 객체인가, 같은 메모리 주소)<br>
+👉 `.equals()` (두 객체의 내용이 같은가, 메모리 주소는 달라도 됨)
 
 
 ```java
+// str1 != arr
+String str1 = "abcde";  // 문자열/스트링 객체
+char arr[] = {'a', 'b', 'c', 'd', 'e'}  // 문자 배열
+
+// str1 != str2, str1.equals(str) == true
+String str2 = new String(arr);
+
 String msg1, msg2;
 msg1 = "Hello";
 msg2 = msg1 + "World!";       // msg2 = msg2 + "World!"
@@ -285,7 +361,7 @@ if(b.equals(c)) {...}   //true > 내용이 같으므로
 
 
 
-## **리터럴과 상수**
+## 리터럴과 상수
 **[ Literal(리터럴) ]**
 > value representation (값 자체의 표현)
 
@@ -293,19 +369,19 @@ if(b.equals(c)) {...}   //true > 내용이 같으므로
 int: 2, 0xA, 0b0110 // 0x 16진수, 0b 이진수
 long: 2L
 float: 3.14f
-double: 2.0, 2.0E4 // = 2.0´104 = 20,000.0
+double: 2.0, 2.0E4 // = 2.0 * 10^4 = 20,000.0
 char: ‘K’, ‘\n’, ‘\t’ // escape characters, - \u000a \u0009
 boolean: true, false
 String : "Man is mortal" // 글자를 모아 만든 객체 , !=배열
 ```
 
-**[ 상수 ]**
-`선언`
-> final 키워드 사용
-• 변수 선언 시 초기값을 지정한다
+**[ 상수 ]**<br>
+`선언`<br>
+> final 키워드 사용<br>
+• 변수 선언 시 초기값을 지정한다<br>
 • 실행 중 값 변경 불가
 
-`상수 선언 사례`
+`상수 선언 사례`<br>
 
 ```java
 final int LENGTH = 20;
@@ -314,20 +390,25 @@ static final double PI = 3.141592; // 변치 않는 수, static으로 선언하�
 
 
 
-## **var 예약어, enum**
+## var 예약어, enum
 
-**[ var 예약어 ]**
-• Java 10부터 도입
-• 자료형을 생략하고 변수 선언 가능(컴파일러가 추론하여 변수 타입 결정)
-• 변수 선언 시 초기값이 주어지지 않으면 컴파일 오류
-• 지역변수 선언에만 한정적으로 사용할 수 있음
+**[ var 예약어 ]**<br>
+• Java 10부터 도입<br>
+• 자료형을 생략하고 변수 선언 가능(컴파일러가 추론하여 변수 타입 결정)<br>
+• 변수 선언 시 `초기값`이 주어지지 않으면 컴파일 오류<br>
+• `지역변수` 선언에만 한정적으로 사용할 수 있음
 
-**[ enum(나열형) ]**
-유한한 종류/가짓수의, 일종의 상수형 자료를 새로 정의
-• 식별자/identifier 처럼 보이기도 하고String (문자열)처럼 출력되기도 하지만 내부적으로 정수로 취급된다
-• Defined at two levels 
-> class × interface level에서 정의: global
-변수/method 수준의 정의: member
+```java
+int price = 200;
+String name = "kitae";
+```
+
+**[ enum(나열형) ]**<br>
+• 유한한 종류/가짓수의, 일종의 상수형 자료를 새로 정의<br>
+• 식별자/identifier 처럼 보이기도 하고String (문자열)처럼 출력되기도 하지만 내부적으로 정수로 취급된다<br>
+• Defined at two levels <br>
+> 👉 class × interface level에서 정의: global<br>
+👉 변수/method 수준의 정의: member
 
 
 ```java
@@ -347,7 +428,7 @@ public class TestEnum {
 ```
 
 
-## **형변환**
+## 형변환
 **[ 형변환 ]**
 > 한 자료형의 값을 다른 형의 값으로 변환
 
@@ -364,6 +445,13 @@ public class TestEnum {
 long m = 25;            // 25는 int 형 25가 long 형으로 자동 변환
 double d = 3.14 * 10;   // 실수 연산 위해 10이 10.0으로 자동 변환
 byte b = (byte)n;       // 손실
+
+int n = 300;
+byte b = n;         //오류
+byte b = (byte)n;   //손실, 하지만 가능
+
+double d = 1.9;
+int n = (int)d; // n = 1, 강제형변환으로 소숫점 이하 0.9 손실
 
 byte b = 127;
 int i = 100;
@@ -411,9 +499,10 @@ int n = Integer.parseInt(“123”);
 <br>
 <br>
 
-# **자바 변수의 유효범위**
+# 자바 변수의 유효범위
 ---
 
+## 변수의 종류
 > 자바의 변수는 선언된 위치에 따라 종류가 나뉘고, 이에 따라 유효범위(scope)도 결정됨(즉, 선언위치에 따라 = 유효범위에 따라)
 
 `참고` 데이터 타입에 따라: 기본형 변수, 참조형 변수
@@ -423,7 +512,7 @@ int n = Integer.parseInt(“123”);
 |:---:|---|
 | **Class Variables**| **클래스 변수**, `static` 변수로, 동종의 객체(클래스 전체)에서 공유(글로벌)|
 | **Instance Variables**| **인스턴스 변수**, 각 객체마다 개별적으로 존재하는 변수(로컬, 복사본처럼 따로 저장)|
-| **Local Variables**| **지역 변수**, 메서드나 블록 내에서 선언되어 그 범위 안에서만 유효한 변수|
+| **Local Variables**| **지역 변수**, 메서드나 블록 내에서 선언되어 그 범위 안에서만 유효한 변수(유효범위규칙)|
 | **Array Elements**| **배열 요소**, 배열의 각 인덱스에 저장된 값|
 | **Method Arguments**| **메서드 인자**, 메서드 호출 시 전달되는 값|
 | **Constructor Arguments**| **생성자 인자**, 생성자 호출 시 전달되는 값|
@@ -456,9 +545,9 @@ try {
 ```
 
 
-**[ 멤버 변수 (Member Variable) ]**
-• 클래스 내부에서 선언된 변수
-• **객체(인스턴스) 변수 + 클래스(static) 변수**를 포함하는 개념
+**[ 멤버 변수 (Member Variable) ]**<br>
+• 클래스 내부에서 선언된 변수<br>
+• **객체(인스턴스) 변수 + 클래스(static) 변수**를 포함하는 개념<br>
 • **클래스 내부에서 선언되지만, 메서드 내부에는 선언되지 않음**
 
 ```java
@@ -474,10 +563,10 @@ class Car {
 <br>
 
 
-**[ 클래스 변수 (Static Variable) ]**
-• `static` 키워드가 붙은 변수
-• **객체에 속하지 않고 클래스 자체에 속함**
-• 모든 객체가 **공유하는 변수** (한 번만 메모리에 저장됨)
+**[ 클래스 변수 (Static Variable) ]**<br>
+• `static` 키워드가 붙은 변수<br>
+• **객체에 속하지 않고 클래스 자체에 속함**<br>
+• 모든 객체가 **공유하는 변수** (한 번만 메모리에 저장됨)<br>
 • **프로그램 실행 시 자동으로 메모리에 할당됨 (Method 영역에 저장됨)**
 
 ```java
@@ -494,10 +583,10 @@ class Student {
 
 <br>
 
-**[ 인스턴스 변수 (Instance Variable) ]**
-• `new` 키워드로 객체를 생성할 때 **각 객체마다 별도로 할당되는 변수**
-• 클래스 내부에서 선언되지만, `static`이 붙지 않음
-• 객체가 생성될 때 힙(Heap) 메모리에 저장됨
+**[ 인스턴스 변수 (Instance Variable) ]**<br>
+• `new` 키워드로 객체를 생성할 때 **각 객체마다 별도로 할당되는 변수**<br>
+• 클래스 내부에서 선언되지만, `static`이 붙지 않음<br>
+• 객체가 생성될 때 힙(Heap) 메모리에 저장됨<br>
 • 객체마다 값을 가질 수 있음 (각 객체마다 독립적)
 
 ```java
@@ -521,9 +610,9 @@ p2.age = 30;
 
 <br>
 
-**[ 지역 변수 (Local Variable) ]**
-• 메서드, 생성자, 또는 블록 `{}` 내부에서 선언된 변수
-• 해당 블록이 실행될 때 생성되고, 블록이 종료되면 삭제됨 (스택에 저장)
+**[ 지역 변수 (Local Variable) ]**<br>
+• 메서드, 생성자, 또는 블록 `{}` 내부에서 선언된 변수<br>
+• 해당 블록이 실행될 때 생성되고, 블록이 종료되면 삭제됨 (스택에 저장)<br>
 • 반드시 **초기화 후 사용해야 함** (자동 초기화 없음)
 
 ```java
@@ -537,9 +626,9 @@ void myMethod() {
 
 <br>
 
-**[ 매개 변수 (Parameter Variable) ]**
-• **메서드의 인자로 전달되는 변수**
-• 메서드가 호출될 때 생성되고, 호출이 끝나면 사라짐
+**[ 매개 변수 (Parameter Variable) ]**<br>
+• **메서드의 인자로 전달되는 변수**<br>
+• 메서드가 호출될 때 생성되고, 호출이 끝나면 사라짐<br>
 • 메서드가 실행될 때 스택(Stack) 메모리에 저장됨
 
 **예제**
@@ -551,14 +640,40 @@ void greet(String name) {  // 매개변수 name
 
 > `greet("Alice")`를 호출하면 `name = "Alice"`가 됨. 메서드 실행 후 사라짐
 
+
+<br>
+
+## 유효범위를 확인해보자!
+
+```java
+class ILoveJava{
+    static String name = "ILoveJava";   // class variable
+    String titles[] = new String[2];    // instance variables
+
+    // constructor(함수이름 = 클래스 이름)
+    ILoveJava(String iHave[]){          // constructor argument
+        int n = iHave.lenght();         // local variable
+        titles[1] = iHave[1];           // array element
+        print(titles[1]);
+    }
+
+    // 멤버함수 = method
+    void print(String str){             // method argument
+        try{
+            System.out.println("My title is" + str);
+        }catch(IOExepstion ex){         // exception handler argument
+            System.out.println(ex);
+            System.exit();
+        }
+    }
+}
+
+```
+
 <br>
 <br>
 <br>
 
-# 변수의 종류 요약!
----
-
-<br>
 
 
 ## **변수의 저장 위치 (메모리 영역)**
@@ -585,17 +700,6 @@ void greet(String name) {  // 매개변수 name
 | **지역 변수** | 메서드 내부 | 스택(Stack) | 메서드 종료 시 | 직접 접근 가능 |
 | **매개 변수** | 메서드의 인자 | 스택(Stack) | 메서드 종료 시 | 직접 접근 가능 |
 
-<br>
-
-## **정리**
-- **기본형 변수** → 값 자체를 저장
-- **참조 변수** → 객체의 주소를 저장
-- **멤버 변수** → 클래스 내부 변수 (`static` O/X 포함)
-- **클래스 변수 (static 변수)** → 모든 객체가 공유하는 변수
-- **인스턴스 변수** → 객체별로 독립적인 변수
-- **지역 변수** → 특정 블록 내에서만 유효한 변수
-- **매개 변수** → 메서드 호출 시 전달되는 값
-
 
 <br>
 <br>
@@ -605,6 +709,11 @@ void greet(String name) {  // 매개변수 name
 # **자바의 연산자(Operators)**
 ---
 자바의 연산자는 **기능에 따라 6가지 유형**으로 나뉜다
+> `참고` 피연산자의 개수에 따라 구분하기도 함<br>
+• unary operators (단항-): `-1`, `++a`, `n--`<br>
+• binary operators (이항-): `1 + 2`, `p == q`, `a > b`<br>
+• ternary operators (삼항-): `a = YN ? 1 : 2`
+
 
 <br>
 
