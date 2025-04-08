@@ -63,7 +63,7 @@ sidebar:
 **[ 바이트코드 (Bytecode) ]**<br>
 •  자바 소스를 **컴파일하여 생성된 목적 코드**  <br>
 •  특정 CPU에 종속되지 않은 중립적인 코드<br>
-•  **JVM(Java Virtual Machine)에 의해 해석되고 실행됨**  <br>
+•  **JVM(Java Virtual Machine)에 의해 해석되고 실행가능한 이진(binary) 코드**  <br>
 **[ 자바 가상 머신 (JVM - Java Virtual Machine) ]**<br>
 •  **바이트코드를 실행하는 가상 기계(소프트웨어)**  <br>
 •  운영체제(OS)와 독립적으로 동작  <br>
@@ -104,7 +104,7 @@ sidebar:
 
 > `JVM < JRE < JDK` 의 포함관계를 가진다
 
-## JVM (Java Virtual Machine) - 자바 가상 머신
+**[ JVM (Java Virtual Machine) - 자바 가상 머신 ]**
 • 자바 바이트코드를 실행하는 소프트웨어  <br>
 • 모든 (HW)플랫 폼에 설치: 플랫폼마다 다른 JVM이 존재하지만, 동일한 실행 환경 제공  <br>
 • JVM 자체는 플랫폼에 종속적, 다양한 회사에서 공급<br>
@@ -127,14 +127,14 @@ sidebar:
 
 <br>
 
-## JRE (Java Runtime Environment) - 자바 실행 환경
+**[ JRE (Java Runtime Environment) - 자바 실행 환경 ]**
 • 자바 프로그램을 실행하기 위한 환경  <br>
 • JVM과 자바 API(라이브러리)들이 들어있는 모듈파일<br>
 • 개발자가 아닌 일반 사용자는 JRE만 설치하면 자바 프로그램 실행 가능  
 
 <br>
 
-## JDK (Java Development Kit) - 자바 개발 키트
+**[ JDK (Java Development Kit) - 자바 개발 키트 ]**
 • 자바 애플리케이션을 개발하고 실행할 수 있는 도구 모음  <br>
 • JDK는 JRE와 추가적인 개발 도구(컴파일러, 디버거 등)를 포함  <br>
 • 자바 코드를 작성하고 실행하려면 반드시 JDK가 필요  <br>
@@ -315,7 +315,7 @@ class Example {
 
 <br>
 
-**힙 영역 (Heap Area)**
+**[ 힙 영역 (Heap Area) ]**
 > **객체(인스턴스)와 배열이 저장되는 공간**  
 
 • `new` 키워드를 사용해 생성한 객체가 저장됨  <br>
@@ -336,7 +336,7 @@ public class Main {
 
 <br>
 
-**스택(Stack) 영역**
+**[ 스택(Stack) 영역 ]**
 > **각 메서드 호출 시 생성되는 메모리 영역**
 
 • 메서드 실행에 필요한 **지역 변수, 매개변수, 연산 중간값, 리턴 값** 등이 저장됨  <br>
@@ -359,7 +359,7 @@ public class Main {
 
 <br>
 
-**PC 레지스터 (Program Counter Register)**
+**[ PC 레지스터 (Program Counter Register) ]**
 > **JVM이 실행 중인 명령어 주소(현재 실행 중인 바이트코드 위치)를 저장하는 공간** 
 
 • 스레드마다 하나씩 존재 → 각 스레드가 실행할 명령어의 위치를 추적  <br>
@@ -367,7 +367,7 @@ public class Main {
 
 <br>
 
-**네이티브 메서드 스택 (Native Method Stack)**
+**[ 네이티브 메서드 스택 (Native Method Stack) ]**
 > **C, C++과 같은 네이티브 코드(C언어 기반 라이브러리)를 실행할 때 사용되는 스택**  
 
 • `JNI(Java Native Interface)`를 통해 실행되는 네이티브 메서드 호출 시 사용됨  <br>
