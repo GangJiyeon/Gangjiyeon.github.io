@@ -2,8 +2,8 @@
 title: "프로그래밍 기초"
 excerpt: "프로그래밍 언어"
 categories:
-  - language
-tags: [자바기초, Java]
+  - cs
+tags: [프로그래밍]
 toc: true
 author_profile: true 
 sidebar:
