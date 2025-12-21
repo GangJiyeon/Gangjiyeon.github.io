@@ -30,20 +30,14 @@
             {% endif %}
         {% endfor %}
       </ul>
-      <span class="nav__sub-title">daily</span>
+      <span class="nav__sub-title">portfolio</span>
       <ul>
         {% for category in site.categories %}
-                    {% if category[0] == "daily" %}
-                        <li><a href="/categories/daily" class="">daily ({{category[1].size}})</a></li>
+                    {% if category[0] == "whalley-score" %}
+                        <li><a href="/categories/whalley-score" class="">whalley-score ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
       </ul>
-      <ul>
-        {% for category in site.categories %}
-                    {% if category[0] == "australia" %}
-                        <li><a href="/categories/australia" class="">australia ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-      </ul>
+
     </li>
   </nav>
