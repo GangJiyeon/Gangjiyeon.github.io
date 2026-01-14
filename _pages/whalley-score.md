@@ -1,5 +1,5 @@
 ---
-title: "language"
+title: "whalley-score"
 layout: archive
 permalink: categories/whalley-score
 author_profile: true

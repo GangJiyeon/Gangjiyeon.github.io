@@ -6,7 +6,7 @@ author_profile: true
 types: posts
 ---
 
-{% assign posts = site.categories.ds_ai %}
+{% assign posts = site.categories.game %}
 {% for post in posts %}
   {% include archive-single.html type=page.entries_layout %}
 {% endfor %}
