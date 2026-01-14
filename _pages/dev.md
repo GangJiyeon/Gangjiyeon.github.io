@@ -1,12 +1,12 @@
 ---
-title: "ds&ai"
+title: "study-dev"
 layout: archive
-permalink: categories/ds_ai
+permalink: categories/dev
 author_profile: true
 types: posts
 ---
 
-{% assign posts = site.categories.ds_ai %}
+{% assign posts = site.categories.language %}
 {% for post in posts %}
   {% include archive-single.html type=page.entries_layout %}
 {% endfor %}
