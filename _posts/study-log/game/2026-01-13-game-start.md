@@ -1,9 +1,9 @@
 ---
-title: "[자바 객체지향] 상속"
-excerpt: " 클래스와 객체, 생성자, 오버로딩"
+title: "[게임개발기] 01. 게임 정체성 및 시나리오 정하기"
+excerpt: "주인공, 주요 npc, 스토리, 세계관을 정하자!"
 categories:
-  - language
-tags: [자바객체지향, Java]
+  - game
+tags: [game]
 toc: true
 author_profile: true 
 sidebar:

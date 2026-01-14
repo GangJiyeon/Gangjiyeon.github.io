@@ -8,25 +8,25 @@
       Category ({{sum}})
     </li>
     <li>
-      <span class="nav__sub-title">develop</span>
+      <span class="nav__sub-title">study-log</span>
       <ul>
         {% for category in site.categories %}
-                    {% if category[0] == "language" %}
-                        <li><a href="/categories/language" class="">language ({{category[1].size}})</a></li>
+                    {% if category[0] == "dev" %}
+                        <li><a href="/categories/dev" class="">study_dev ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
       </ul>
       <ul>
         {% for category in site.categories %}
-            {% if category[0] == "cs" %}
-                <li><a href="/categories/cs" class="">cs ({{category[1].size}})</a></li>
+            {% if category[0] == "game" %}
+                <li><a href="/categories/game" class="">game ({{category[1].size}})</a></li>
             {% endif %}
         {% endfor %}
       </ul>
       <ul>
         {% for category in site.categories %}
-            {% if category[0] == "ds_ai" %}
-                <li><a href="/categories/ds_ai" class="">ds_ai ({{category[1].size}})</a></li>
+            {% if category[0] == "retrospective" %}
+                <li><a href="/categories/retrospective" class="">retrospective ({{category[1].size}})</a></li>
             {% endif %}
         {% endfor %}
       </ul>
@@ -35,6 +35,13 @@
         {% for category in site.categories %}
                     {% if category[0] == "whalley-score" %}
                         <li><a href="/categories/whalley-score" class="">whalley-score ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+      </ul>
+      <ul>
+        {% for category in site.categories %}
+                    {% if category[0] == "whalley-community" %}
+                        <li><a href="/categories/whalley-community" class="">whalley-community ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
       </ul>
