@@ -25,6 +25,13 @@
       </ul>
       <ul>
         {% for category in site.categories %}
+            {% if category[0] == "dev-log" %}
+                <li><a href="/categories/dev-log" class="">dev-log ({{category[1].size}})</a></li>
+            {% endif %}
+        {% endfor %}
+      </ul>
+      <ul>
+        {% for category in site.categories %}
             {% if category[0] == "retrospective" %}
                 <li><a href="/categories/retrospective" class="">retrospective ({{category[1].size}})</a></li>
             {% endif %}

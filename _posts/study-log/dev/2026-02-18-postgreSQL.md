@@ -1,6 +1,6 @@
 ---
-title: "PostgreSQL(포스트그레스) 완전 정복"
-excerpt: "포그트그레스가 무엇인지, 언제쓰이는지, 왜 쓰이는지 자세히 알아보자..."
+title: "[DB] PostgreSQL(포스트그레스) 기초 - 수정 중..."
+excerpt: "포스트그레스가 무엇인지, 언제쓰이는지, 왜 쓰이는지 자세히 알아보자..."
 categories:
   - dev
 tags: [DB]
