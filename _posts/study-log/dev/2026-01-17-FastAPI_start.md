@@ -1,5 +1,5 @@
 ---
-title: "[FastAPI] FastAPI란? / VScode에서 FastAPI 시작하기"
+title: "[FastAPI] FastAPI란? / VScode에서 FastAPI 시작하기 - 수정중"
 excerpt: "파이썬 가상환경 설정, FastAPI 구조"
 categories:
   - dev
