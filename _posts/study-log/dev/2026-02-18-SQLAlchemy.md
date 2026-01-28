@@ -1,5 +1,5 @@
 ---
-title: "[FastAPI] SQLAlchemy"
+title: "[FastAPI] SQLAlchemy구조 알아보기 / FastAPI에서 SQLAlchemy 사용하기(feat. Docker, PostgreSQL)"
 excerpt: ""
 categories:
   - dev
@@ -115,3 +115,18 @@ def get_regions(db: Session = Depends(get_db)):
     return db.query(Region).all()
 ```
 
+<br>
+<br>
+<br>
+
+# SQLAlchemy 사용하기
+
+Postgres (Docker) ✅
+
+SQLAlchemy 연결 ✅
+
+Base / session 설정 ✅
+
+Alembic init ✅알렘빅 이니트 ✅
+
+첫 revision 생성 ✅
