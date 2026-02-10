@@ -1,5 +1,5 @@
 ---
-title: "[FastAPI] FastAPI란? / VScode에서 FastAPI 시작하기 - 수정중"
+title: "[FastAPI] FastAPI란? / VScode에서 FastAPI 시작하기"
 excerpt: "파이썬 가상환경 설정, FastAPI 구조"
 categories:
   - dev
@@ -27,7 +27,7 @@ sidebar:
 <br>
 <br>
 
-**[ FastAPI를 사용하는 이유 ]** 
+**[ FastAPI를 사용하는 이유 ]**     
 FastAPI를 사용하는 이유는 크게 4가지로 정리할 수 있다     
 
 • **1)** 이름처럼 정말 빠르다
