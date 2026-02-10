@@ -17,8 +17,9 @@ sidebar:
 # FastAPI란? 
 ## FastAPI란?
 
-**[ SQLAlchemy ]**
-> SQL을 직접 사용하지 않고, `파이썬 객체`로 테이블을 정의하고 조회/삽입/수정/삭제 기능 등을 다루게 해주는 도구를 `SQLAlchemy`라고 한다
+**[ FastAPI ]**
+> `FastAPI`는 `Python`으로 만드는 웹 API `프레임워크`이다.    
+> 쉽게 말하자면, 프론트엔드나 다른 서비스 데이터를 주고받는 서버를 빠르고 깔끔하게 만들 수 있게 도와주는 도구이다.    
 
 
 
@@ -26,21 +27,15 @@ sidebar:
 <br>
 <br>
 
-## FastAPI를 사용하는 이유
+**[ FastAPI를 사용하는 이유 ]** 
+FastAPI를 사용하는 이유는 크게 4가지로 정리할 수 있다    
+• **1)**: 이름처럼 정말 빠르다
+> 내부적으로 비동기(`async`)처리를 기반으로 동작하기 때문에, 트래픽이 많아져도 성능이 좋다
 
-
-**[ DB ]**
-• 실제로 데이터가 저장되는 곳으로, SQL을 사용해 DB를 관리한다    
-• 흔히 우리가 아는 Mysql, Postgres가 여기에 해당된다    
-
-<br>
-
-**[ Data Access Layer (SQLAlchemy Config) ]**
-Data Access Layer는 SQLAlchemy Config를 의미하는데, SQLAlchemy Config는 Engine과 Connection으로 구성되어 있다.    
-
-• **역할 1**: DB 주소 설정하기    
-• **역할 2**: 엔진 생성하기    
-• **역할 3**: 연결 관리하기
+• **2)**: 코드가 직관적이다    
+• **3)**: 자동 API 문서 생성    
+• **3)**: 타입 힌트로 안정성을 높힐 수 있다    
+> 잘못된 요청이 들어오면 자동으로 막아준다
 
 <br>
 <br>
@@ -50,6 +45,16 @@ Data Access Layer는 SQLAlchemy Config를 의미하는데, SQLAlchemy Config는 
 # VScode에서 FastAPI 시작하기
 
 ## FastAPI 폴더 구성하기
+우선 FastAPI는 일반적으로 백엔드와 프론트엔드를 구분한다    
+
+```py
+backend/
+	├─ app/
+	│   ├─ __init__.py
+	│   └─ main.py
+	├─ requirements.txt
+	└─ ...
+```
 
 <br>
 <br>
@@ -69,15 +74,27 @@ Data Access Layer는 SQLAlchemy Config를 의미하는데, SQLAlchemy Config는 
 
 ## FastAPI 초기 셋팅하기
 
-**1) 폴더 구조 만들기**: 
+**1) 폴더 구조 만들기**    
+보통 프론트앤드와 백앤드가 구분된 프로젝트는 아래와 같은 폴더구조를 갖는다
 
 ```py
-backend/
-	├─ app/
-	│   ├─ __init__.py
-	│   └─ main.py
-	├─ requirements.txt
-	└─ ...
+project-root/
+├─ backend/
+│  ├─ app/
+│  │  ├─ main.py        # FastAPI 엔트리포인트
+│  │  ├─ api/           # 라우터들
+│  │  ├─ models/        # DB 모델
+│  │  ├─ schemas/       # Pydantic 스키마
+│  │  └─ services/      # 비즈니스 로직
+│  └─ requirements.txt
+│
+├─ frontend/
+│  ├─ src/
+│  ├─ public/
+│  └─ package.json
+│
+└─ README.md
+
 ```
 
 > `__init__.py`는 파이썬 패키지용 파일
